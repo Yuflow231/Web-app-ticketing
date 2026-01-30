@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketingApp - Ticket</title>
+    <link href="custom.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Navigation bars -->
+    <div class="navigation">
+        <header class="top-bar">
+            <p>Ticketing app shenanigans |</p>
+            <a href="index.html">
+                <button type="button" class="btn"> Logout</button>
+            </a>
+        </header>
+
+        <!-- Side navigation bar -->
+        <div class="side-nav">
+            <a href="dashBoard.html">
+                <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                <span class="text">Dashboard</span>
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                <span class="text">Projects</span>
+            </a>
+            <a href="tickets.html" class="active">
+                <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                <span class="text">Tickets</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                <span class="text">Settings</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Page content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h2>My tickets</h2>
+            <a href="ticket-creation.html"><button type="button" class="btn">New ticket</button></a>
+        </header>
+
+        <!-- Tickets section -->
+        <section class="tickets">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Due to</th>
+                    <th>Priority</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>#101</td>
+                    <td>Fix login issue</td>
+                    <td>Web app</td>
+                    <td>Open</td>
+                    <td>Date.exe</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td>#102</td>
+                    <td>Update dashboard UI</td>
+                    <td>Web app</td>
+                    <td>In Progress</td>
+                    <td>Date.exe</td>
+                    <td>Medium</td>
+                </tr>
+                <tr>
+                    <td>#103</td>
+                    <td>Update dashboard UI</td>
+                    <td>Web app</td>
+                    <td>In Progress</td>
+                    <td>Date.exe</td>
+                    <td>Medium</td>
+                </tr>
+                <tr>
+                    <td>#104</td>
+                    <td>Update dashboard UI</td>
+                    <td>Web app</td>
+                    <td>In Progress</td>
+                    <td>Date.exe</td>
+                    <td>Medium</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

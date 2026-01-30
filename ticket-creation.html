@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketingApp - Projects</title>
+    <link href="custom.css" rel="stylesheet"/>
+    <script src="drag&drop.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bars -->
+    <div class="navigation">
+    <header class="top-bar">
+        <p>Ticketing app shenanigans |</p>
+        <div>
+            <a href="index.html">
+                <button type="button" class="btn"> Logout</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side navigation bar -->
+    <div class="side-nav">
+        <a href="dashBoard.html">
+            <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="text">Dashboard</span>
+        </a>
+        <a href="projects.html">
+            <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+            <span class="text">Projects</span>
+        </a>
+        <a href="tickets.html" class="active">
+            <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+            <span class="text">Tickets</span>
+        </a>
+        <a href="#">
+            <span class="icon"><i class="fa-solid fa-gear"></i></span>
+            <span class="text">Settings</span>
+        </a>
+    </div>
+
+</div>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Ticket creation</h1>
+        </header>
+
+        <form id="ticket-creation-form" class="form-box" action="/submit-ticket" method="POST">
+            <div class="form-2elements">
+                <div class="form-item-stacked">
+                    <label for="ticket-name">Ticket's object</label>
+                    <input type="text" id="ticket-name" name="ticket-name" placeholder="Ticket's object" required>
+                </div>
+                <div class="form-item-stacked">
+                    <label for="client-project">Project associated</label>
+                    <select id="client-project" name="client-project" required>
+                        <option value="project-1">Project 1</option>
+                        <option value="project-2">Project 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-2elements">
+                <div class="form-item-stacked">
+                    <label for="end-date">Due to</label>
+                    <input type="date" id="end-date" name="end-date" required>
+                </div>
+                <div class="form-item-stacked">
+                    <label for="ticket-priority">Priority</label>
+                    <select id="ticket-priority" name="ticket-priority" required>
+                        <option value="priority-high">High</option>
+                        <option value="priority-medium">Medium</option>
+                        <option value="priority-low">Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <label for="ticket-description">Description</label>
+            <textarea id="ticket-description" name="ticket-description" rows="4" placeholder="Ticket description" required></textarea>
+
+            <div class="form-item">
+                <label for="ticket-file">Attach files</label>
+                <div id="drop-zone">
+                    <p>Drag and drop files here or click to select files</p>
+                    <input type="file" id="ticket-file" name="ticket-file" multiple style="display: none;">
+                </div>
+                <ul id="file-list"></ul>
+            </div>
+
+            <div class="centered"><a href="tickets.html"><button type="button" class="btn">Create ticket</button></a></div>
+        </form>
+    </main>
+</body>
+</html>

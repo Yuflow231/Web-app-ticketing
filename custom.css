@@ -194,54 +194,6 @@ table tr:nth-child(even) {
 }
 
 /*-------------------------------*/
-/*|        Dashboard Styles      |*/
-/*-------------------------------*/
-h1, h2 {
-    color: #333333;
-}
-
-.project-card,
-.stat-card{
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px var(--card-shadow);
-    padding: 1rem;
-}
-
-.project-card h3,
-.stat-card h3 {
-    margin: 0 0 0.5rem 0;
-    color: #0E94D4;
-}
-
-.project-card p {
-    margin: 0.5rem 0;
-    color: #555555;
-}
-
-.stat-card{
-    display: flex;
-}
-
-.stat-card .icon{
-    margin: auto 0;
-    font-size: 25px;
-}
-
-.stat-details{
-    width: 100%;
-    margin: auto 0.5rem;
-}
-
-.grid-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 14rem));
-    gap: 1rem;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-/*-------------------------------*/
 /*|      Form General Styles    |*/
 /*-------------------------------*/
 form {
@@ -306,6 +258,82 @@ form input:focus, form textarea:focus, form select:focus {
     margin-bottom: 1rem;
 }
 
+form input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#drop-zone {
+    border: 2px dashed #007BFF;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+#drop-zone:hover {
+    background-color: #e0f0ff;
+}
+
+#drop-zone.dragover {
+    background-color: #cce5ff;
+    border-color: #0056b3;
+}
+
+/*-------------------------------*/
+/*|        Dashboard Styles      |*/
+/*-------------------------------*/
+h1, h2 {
+    color: #333333;
+}
+
+.project-card,
+.stat-card{
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    padding: 1rem;
+}
+
+.project-card h3,
+.stat-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #0E94D4;
+}
+
+.project-card p {
+    margin: 0.5rem 0;
+    color: #555555;
+}
+
+.stat-card{
+    display: flex;
+}
+
+.stat-card .icon{
+    margin: auto 0;
+    font-size: 25px;
+}
+
+.stat-details{
+    width: 100%;
+    margin: auto 0.5rem;
+}
+
+.grid-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 14rem));
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 /*-------------------------------*/
 /*|         Login Styles        |*/
 /*-------------------------------*/
@@ -319,5 +347,3 @@ form input:focus, form textarea:focus, form select:focus {
 #login-box h2{
     text-align: center;
 }
-
-
