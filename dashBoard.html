@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketingApp - Dashboard</title>
+    <link href="custom.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <!-- Navigation bars -->
+    <div class="navigation">
+        <header class="top-bar">
+            <p>Ticketing app shenanigans | </p>
+            <a href="index.html">
+                <button type="button" class="btn"> Logout</button>
+            </a>
+        </header>
+
+        <!-- Side navigation bar -->
+        <div class="side-nav">
+            <a href="dashBoard.html">
+                <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                <span class="text">Dashboard</span>
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                <span class="text">Projects</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                <span class="text">Tickets</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                <span class="text">Settings</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Page content -->
+    <main class="main-content">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Here you can manage your projects, tickets.</p>
+        <section id="statistics">
+            <div class="grid-content">
+                <div class="card">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span>Active projects</span>
+                </div>
+                <div class="card">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span>OnGoing Tickets</span>
+                </div>
+                <div class="card">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span>Urgent tickets</span>
+                </div>
+                <div class="card">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span>Solved</span>
+                </div>
+            </div>
+        </section>
+        <!-- Project Section -->
+        <section id="projects">
+            <h2>Projects accessed recently</h2>
+            <div class="grid-content">
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Project B</h3>
+                    <p>Tickets: 8</p>
+                    <p>Status: Completed</p>
+                </div>
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Project A</h3>
+                    <p>Tickets: 12</p>
+                    <p>Status: In Progress</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tickets section -->
+        <section>
+            <h2>Recent Tickets</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>#101</td>
+                    <td>Fix login issue</td>
+                    <td>Open</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td>#102</td>
+                    <td>Update dashboard UI</td>
+                    <td>In Progress</td>
+                    <td>Medium</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>
