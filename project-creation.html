@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketingApp - Projects</title>
+    <link href="custom.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Navigation bars -->
+    <div class="navigation">
+    <header class="top-bar">
+        <p>Ticketing app shenanigans |</p>
+        <div>
+            <a href="index.html">
+                <button type="button" class="btn"> Logout</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <button type="button" class="btn">The other Logout</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side navigation bar -->
+    <div class="side-nav">
+        <a href="dashBoard.html">
+            <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span class="text">Dashboard</span>
+        </a>
+        <a href="projects.html" class="active">
+            <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+            <span class="text">Projects</span>
+        </a>
+        <a href="#">
+            <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+            <span class="text">Tickets</span>
+        </a>
+        <a href="#">
+            <span class="icon"><i class="fa-solid fa-gear"></i></span>
+            <span class="text">Settings</span>
+        </a>
+    </div>
+
+</div>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Project creation</h1>
+        </header>
+
+        <form id="project-creation-form" class="form-box" action="/submit-project" method="POST">
+            <div class="form-2elements">
+                <div class="form-item-stacked">
+                    <label for="project-name">Project's name</label>
+                    <input type="text" id="project-name" name="project-name" placeholder="Project's name" required>
+                </div>
+                <div class="form-item-stacked">
+                    <label for="client-name">Client</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Your name" required>
+                </div>
+            </div>
+
+
+            <!-- Description -->
+            <label for="project-description">Description</label>
+            <textarea id="project-description" name="project-description" rows="4" placeholder="Project description" required></textarea>
+
+            <!-- Date de début -->
+            <div class="form-2elements">
+                <div class="form-item-stacked">
+                    <label for="start-date">Starting date</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                </div>
+
+                <div class="form-item-stacked">
+                    <label for="end-date">Ending date (optional)</label>
+                    <input type="date" id="end-date" name="end-date">
+                </div>
+            </div>
+
+
+            <div class="centered"><a href="projects.html"><button type="button" class="btn">Create project</button></a></div>
+        </form>
+    </main>
+</body>
+</html>

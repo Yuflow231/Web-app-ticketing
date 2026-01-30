@@ -15,13 +15,13 @@
         <header class="top-bar">
             <p>Ticketing app shenanigans | </p>
             <a href="index.html">
-                <button type="button" class="btn"> Logout</button>
+                <button type="button" class="btn">Logout</button>
             </a>
         </header>
 
         <!-- Side navigation bar -->
-        <div class="side-nav">
-            <a href="dashBoard.html">
+        <nav class="side-nav">
+            <a href="dashBoard.html" class="active">
                 <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                 <span class="text">Dashboard</span>
             </a>
@@ -37,69 +37,108 @@
                 <span class="icon"><i class="fa-solid fa-gear"></i></span>
                 <span class="text">Settings</span>
             </a>
-        </div>
+        </nav>
 
     </div>
 
     <!-- Page content -->
     <main class="main-content">
-        <h1>Welcome to the Dashboard</h1>
-        <p>Here you can manage your projects, tickets.</p>
+        <header class="page-header">
+            <div>
+                <h1>Welcome to the Dashboard</h1>
+                <p>Here you will find quick access to your recent activities.</p>
+            </div>
+        </header>
+
+        <!-- Statistic Section -->
         <section id="statistics">
             <div class="grid-content">
-                <div class="card">
-                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                    <span>Active projects</span>
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="stat-details">
+                        <h3>Active projects</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                    <span>OnGoing Tickets</span>
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="stat-details">
+                        <h3>OnGoing Tickets</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                    <span>Urgent tickets</span>
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="stat-details">
+                        <h3>Urgent tickets</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                    <span>Solved</span>
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="stat-details">
+                        <h3>Solved</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
         <!-- Project Section -->
         <section id="projects">
-            <h2>Projects accessed recently</h2>
+            <h2>Recent projects</h2>
             <div class="grid-content">
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project B</h3>
                     <p>Tickets: 8</p>
                     <p>Status: Completed</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
                     <p>Status: In Progress</p>
@@ -109,7 +148,7 @@
         </section>
 
         <!-- Tickets section -->
-        <section>
+        <section class="tickets">
             <h2>Recent Tickets</h2>
             <table>
                 <thead>
@@ -117,6 +156,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Status</th>
+                    <th>Due to</th>
                     <th>Priority</th>
                 </tr>
                 </thead>
@@ -125,12 +165,14 @@
                     <td>#101</td>
                     <td>Fix login issue</td>
                     <td>Open</td>
+                    <td>Date.exe</td>
                     <td>High</td>
                 </tr>
                 <tr>
                     <td>#102</td>
                     <td>Update dashboard UI</td>
                     <td>In Progress</td>
+                    <td>Date.exe</td>
                     <td>Medium</td>
                 </tr>
                 </tbody>

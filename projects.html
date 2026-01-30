@@ -13,9 +13,14 @@
     <div class="navigation">
         <header class="top-bar">
             <p>Ticketing app shenanigans |</p>
-            <a href="index.html">
-                <button type="button" class="btn"> Logout</button>
-            </a>
+            <div>
+                <a href="index.html">
+                    <button type="button" class="btn"> Logout</button>
+                </a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <button type="button" class="btn">The other Logout</button>
+                </a>
+            </div>
         </header>
 
         <!-- Side navigation bar -->
@@ -24,7 +29,7 @@
                 <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                 <span class="text">Dashboard</span>
             </a>
-            <a href="projects.html">
+            <a href="projects.html" class="active">
                 <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
                 <span class="text">Projects</span>
             </a>
@@ -42,8 +47,61 @@
 
     <!-- Page content -->
     <main class="main-content">
-        <p>caca</p>
-        <div><button type="button" class="btn">create project</button></div>
+        <header class="page-header">
+            <h2>My projects</h2>
+            <a href="project-creation.html"><button type="button" class="btn">New project</button></a>
+        </header>
+
+        <!-- Project tab-->
+        <section class="projects-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Client</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Creation date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>#101</td>
+                    <td>Skyblocker</td>
+                    <td>VicIsACat</td>
+                    <td>OnGoing</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 3%;"></div>
+                            </div>
+                            <div class="progress-percentage">3%</div>
+                        </div>
+                    </td>
+                    <td>52/02/1996</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>#102</td>
+                    <td>Customizable Player Model</td>
+                    <td>Tom5444</td>
+                    <td>On Hold</td>
+                    <td>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                    </td>
+                    <td>30/01/2026</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 </body>
 </html>
