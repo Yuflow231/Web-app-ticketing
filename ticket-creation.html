@@ -7,48 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicketingApp - Projects</title>
     <link href="custom.css" rel="stylesheet"/>
+
     <script src="drag&drop.js" defer></script>
 </head>
 <body>
     <!-- Navigation bars -->
-    <div class="navigation">
-    <header class="top-bar">
-        <p>Ticketing app shenanigans |</p>
-        <div>
+    <nav class="navigation">
+        <header class="top-bar">
+            <p>Ticketing app shenanigans |</p>
+            <div class="user-profile-header">
+                <a href="profile.html">
+                    <span class="username" data-type="first-name">User</span>
+                    <span class="username" data-type="last-name">Name</span>
+                    <!-- placeholder using my YouTube profile pic -->
+                    <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
+                </a>
+            </div>
+        </header>
+
+        <!-- Side navigation bar -->
+        <div class="side-nav">
+            <div class="top-side">
+                <a href="dashBoard.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="projects.html">
+                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <span class="text">Projects</span>
+                </a>
+                <a href="tickets.html" id="active">
+                    <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                    <span class="text">Tickets</span>
+                </a>
+                <a href="profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="text">Profile</span>
+                </a>
+            </div>
+
             <a href="index.html">
-                <button type="button" class="btn"> Logout</button>
+                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span class="text">Logout</span>
             </a>
+
         </div>
-    </header>
-
-    <!-- Side navigation bar -->
-    <div class="side-nav">
-        <a href="dashBoard.html">
-            <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-            <span class="text">Dashboard</span>
-        </a>
-        <a href="projects.html">
-            <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
-            <span class="text">Projects</span>
-        </a>
-        <a href="tickets.html" class="active">
-            <span class="icon"><i class="fa-solid fa-ticket"></i></span>
-            <span class="text">Tickets</span>
-        </a>
-        <a href="#">
-            <span class="icon"><i class="fa-solid fa-gear"></i></span>
-            <span class="text">Settings</span>
-        </a>
-    </div>
-
-</div>
+    </nav>
 
     <main class="main-content">
         <header class="page-header">
             <h1>Ticket creation</h1>
         </header>
 
-        <form id="ticket-creation-form" class="form-box" action="/submit-ticket" method="POST">
+        <form id="creation-form" class="form-box" action="/submit-ticket" method="POST">
             <div class="form-2elements">
                 <div class="form-item-stacked">
                     <label for="ticket-name">Ticket's object</label>
@@ -80,13 +91,14 @@
 
             <!-- Description -->
             <label for="ticket-description">Description</label>
-            <textarea id="ticket-description" name="ticket-description" rows="4" placeholder="Ticket description" required></textarea>
+            <textarea id="ticket-description" name="ticket-description" rows="8" placeholder="Ticket description" required></textarea>
 
+            <!-- File drop -->
             <div class="form-item">
-                <label for="ticket-file">Attach files</label>
+                <label for="drop-file">Attach files</label>
                 <div id="drop-zone">
                     <p>Drag and drop files here or click to select files</p>
-                    <input type="file" id="ticket-file" name="ticket-file" multiple style="display: none;">
+                    <input type="file" id="drop-file" name="drop-file" multiple style="display: none;">
                 </div>
                 <ul id="file-list"></ul>
             </div>

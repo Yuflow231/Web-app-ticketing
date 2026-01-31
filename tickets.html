@@ -10,91 +10,136 @@
 </head>
 <body>
     <!-- Navigation bars -->
-    <div class="navigation">
+    <nav class="navigation">
         <header class="top-bar">
             <p>Ticketing app shenanigans |</p>
-            <a href="index.html">
-                <button type="button" class="btn"> Logout</button>
-            </a>
+            <div class="user-profile-header">
+                <a href="profile.html">
+                    <span class="username" data-type="first-name">User</span>
+                    <span class="username" data-type="last-name">Name</span>
+                    <!-- placeholder using my YouTube profile pic -->
+                    <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
+                </a>
+            </div>
         </header>
 
         <!-- Side navigation bar -->
         <div class="side-nav">
-            <a href="dashBoard.html">
-                <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                <span class="text">Dashboard</span>
-            </a>
-            <a href="projects.html">
-                <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
-                <span class="text">Projects</span>
-            </a>
-            <a href="tickets.html" class="active">
-                <span class="icon"><i class="fa-solid fa-ticket"></i></span>
-                <span class="text">Tickets</span>
-            </a>
-            <a href="#">
-                <span class="icon"><i class="fa-solid fa-gear"></i></span>
-                <span class="text">Settings</span>
-            </a>
-        </div>
+            <div class="top-side">
+                <a href="dashBoard.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="projects.html">
+                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <span class="text">Projects</span>
+                </a>
+                <a href="tickets.html" id="active">
+                    <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                    <span class="text">Tickets</span>
+                </a>
+                <a href="profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="text">Profile</span>
+                </a>
+            </div>
 
-    </div>
+            <a href="index.html">
+                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span class="text">Logout</span>
+            </a>
+
+        </div>
+    </nav>
 
     <!-- Page content -->
     <main class="main-content">
         <header class="page-header">
-            <h2>My tickets</h2>
-            <a href="ticket-creation.html"><button type="button" class="btn">New ticket</button></a>
+            <div class="page-header-line">
+                <h2>My tickets</h2>
+                <a href="ticket-creation.html"><button type="button" class="btn">New ticket</button></a>
+            </div>
+            <div class="page-header-line">
+                <div class="filter">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" name="search" placeholder="Search Ticket">
+                </div>
+            </div>
         </header>
 
         <!-- Tickets section -->
         <section class="tickets">
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Project</th>
-                    <th>Status</th>
-                    <th>Due to</th>
-                    <th>Priority</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>#101</td>
-                    <td>Fix login issue</td>
-                    <td>Web app</td>
-                    <td>Open</td>
-                    <td>Date.exe</td>
-                    <td>High</td>
-                </tr>
-                <tr>
-                    <td>#102</td>
-                    <td>Update dashboard UI</td>
-                    <td>Web app</td>
-                    <td>In Progress</td>
-                    <td>Date.exe</td>
-                    <td>Medium</td>
-                </tr>
-                <tr>
-                    <td>#103</td>
-                    <td>Update dashboard UI</td>
-                    <td>Web app</td>
-                    <td>In Progress</td>
-                    <td>Date.exe</td>
-                    <td>Medium</td>
-                </tr>
-                <tr>
-                    <td>#104</td>
-                    <td>Update dashboard UI</td>
-                    <td>Web app</td>
-                    <td>In Progress</td>
-                    <td>Date.exe</td>
-                    <td>Medium</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="table-btns table-header">
+                <button class="btn"><</button>
+                <span>Page 1 of 1</span>
+                <button class="btn">></button>
+            </div>
+            <div class="table-card">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th>Due to</th>
+                        <th>Priority</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>#101</td>
+                        <td>Fix login issue</td>
+                        <td>Web app</td>
+                        <td>Open</td>
+                        <td>Date.exe</td>
+                        <td>High</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>#102</td>
+                        <td>Update dashboard UI</td>
+                        <td>Web app</td>
+                        <td>In Progress</td>
+                        <td>Date.exe</td>
+                        <td>Medium</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>#103</td>
+                        <td>Update dashboard UI</td>
+                        <td>Web app</td>
+                        <td>In Progress</td>
+                        <td>Date.exe</td>
+                        <td>Medium</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>#104</td>
+                        <td>Update dashboard UI</td>
+                        <td>Web app</td>
+                        <td>In Progress</td>
+                        <td>Date.exe</td>
+                        <td>Medium</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-btns table-footer">
+                <button class="btn"><</button>
+                <span>Page 1 of 1</span>
+                <button class="btn">></button>
+            </div>
         </section>
     </main>
 </body>

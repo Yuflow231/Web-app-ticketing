@@ -9,95 +9,90 @@
     <link href="custom.css" rel="stylesheet"/>
 </head>
 <body>
-
     <!-- Navigation bars -->
-    <div class="navigation">
+    <nav class="navigation">
         <header class="top-bar">
-            <p>Ticketing app shenanigans | </p>
-            <a href="index.html">
-                <button type="button" class="btn">Logout</button>
-            </a>
+            <p>Ticketing app shenanigans |</p>
+            <div class="user-profile-header">
+                <a href="profile.html">
+                    <span class="username" data-type="first-name">User</span>
+                    <span class="username" data-type="last-name">Name</span>
+                    <!-- placeholder using my YouTube profile pic -->
+                    <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
+                </a>
+            </div>
         </header>
 
         <!-- Side navigation bar -->
-        <nav class="side-nav">
-            <a href="dashBoard.html" class="active">
-                <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
-                <span class="text">Dashboard</span>
-            </a>
-            <a href="projects.html">
-                <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
-                <span class="text">Projects</span>
-            </a>
-            <a href="tickets.html">
-                <span class="icon"><i class="fa-solid fa-ticket"></i></span>
-                <span class="text">Tickets</span>
-            </a>
-            <a href="#">
-                <span class="icon"><i class="fa-solid fa-gear"></i></span>
-                <span class="text">Settings</span>
-            </a>
-        </nav>
+        <div class="side-nav">
+            <div class="top-side">
+                <a href="dashBoard.html" id="active">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="projects.html">
+                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <span class="text">Projects</span>
+                </a>
+                <a href="tickets.html">
+                    <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                    <span class="text">Tickets</span>
+                </a>
+                <a href="profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="text">Profile</span>
+                </a>
+            </div>
 
-    </div>
+            <a href="index.html">
+                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span class="text">Logout</span>
+            </a>
+
+        </div>
+    </nav>
 
     <!-- Page content -->
     <main class="main-content">
         <header class="page-header">
-            <div>
-                <h1>Welcome to the Dashboard</h1>
-                <p>Here you will find quick access to your recent activities.</p>
-            </div>
+            <h1>Welcome to the Dashboard</h1>
+            <p>Here you will find quick access to your recent activities.</p>
         </header>
 
         <!-- Statistic Section -->
         <section id="statistics">
             <div class="grid-content">
                 <div class="stat-card">
-                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
                     <div class="stat-details">
-                        <h3>Active projects</h3>
-                        <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%;"></div>
-                            </div>
-                            <div class="progress-percentage">75%</div>
+                        <h3>45</h3>
+                        <p class="text">Active projects</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="stat-details">
+                        <div class="stat-details">
+                            <h3>23</h3>
+                            <p class="text">Active Tickets</p>
                         </div>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
                     <div class="stat-details">
-                        <h3>OnGoing Tickets</h3>
-                        <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%;"></div>
-                            </div>
-                            <div class="progress-percentage">75%</div>
+                        <div class="stat-details">
+                            <h3>0</h3>
+                            <p class="text">Urgent Tickets</p>
                         </div>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="icon"><i class="fa-solid fa-ban"></i></div>
                     <div class="stat-details">
-                        <h3>Urgent tickets</h3>
-                        <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%;"></div>
-                            </div>
-                            <div class="progress-percentage">75%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="stat-details">
-                        <h3>Solved</h3>
-                        <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 75%;"></div>
-                            </div>
-                            <div class="progress-percentage">75%</div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p class="text">Closed Tickets</p>
                         </div>
                     </div>
                 </div>
@@ -150,33 +145,35 @@
         <!-- Tickets section -->
         <section class="tickets">
             <h2>Recent Tickets</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Due to</th>
-                    <th>Priority</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>#101</td>
-                    <td>Fix login issue</td>
-                    <td>Open</td>
-                    <td>Date.exe</td>
-                    <td>High</td>
-                </tr>
-                <tr>
-                    <td>#102</td>
-                    <td>Update dashboard UI</td>
-                    <td>In Progress</td>
-                    <td>Date.exe</td>
-                    <td>Medium</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="table-card">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Due to</th>
+                        <th>Priority</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>#101</td>
+                        <td>Fix login issue</td>
+                        <td>Open</td>
+                        <td>Date.exe</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>#102</td>
+                        <td>Update dashboard UI</td>
+                        <td>In Progress</td>
+                        <td>Date.exe</td>
+                        <td>Medium</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 

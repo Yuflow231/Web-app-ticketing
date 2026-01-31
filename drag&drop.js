@@ -1,5 +1,5 @@
 const dropZone = document.getElementById('drop-zone');
-const fileInput = document.getElementById('ticket-file');
+const fileInput = document.getElementById('drop-file');
 const fileListDisplay = document.getElementById('file-list');
 let selectedFiles = []; // Tab to stock selected files
 
@@ -10,12 +10,7 @@ dropZone.addEventListener('click', () => {
 
 // Update selected file list
 fileInput.addEventListener('change', () => {
-    Array.from(fileInput.files).forEach(file => {
-        if (!selectedFiles.some(f => f.name === file.name)) {
-            selectedFiles.push(file);
-        }
-    });
-    renderFileList();
+    handleFiles(fileInput.files);
 });
 
 // Handle the drag&drop
@@ -31,15 +26,28 @@ dropZone.addEventListener('dragleave', () => {
 dropZone.addEventListener('drop', (e) => {
     e.preventDefault();
     dropZone.classList.remove('dragover');
-    const files = e.dataTransfer.files;
-    Array.from(files).forEach(file => {
-        if (!selectedFiles.some(f => f.name === file.name)) {
-            selectedFiles.push(file);
-        }
-    });
-    renderFileList();
+    handleFiles(e.dataTransfer.files);
 });
 
+// Logic to handle single vs multiple
+function handleFiles(files) {
+    const isMultiple = fileInput.hasAttribute('multiple');
+
+    if (!isMultiple) {
+        // Single file mode: Replace the list with only the first new file
+        if (files.length > 0) {
+            selectedFiles = [files[0]];
+        }
+    } else {
+        // Multiple file mode: Append unique files
+        Array.from(files).forEach(file => {
+            if (!selectedFiles.some(f => f.name === file.name)) {
+                selectedFiles.push(file);
+            }
+        });
+    }
+    renderFileList();
+}
 // Function to render file list
 function renderFileList() {
     fileListDisplay.innerHTML = ''; // Reset list
@@ -49,8 +57,9 @@ function renderFileList() {
 
         // Add a button to remove a file
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.style.marginLeft = '10px';
+        removeButton.classList.add('removeBtn');
+        removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
         removeButton.addEventListener('click', () => {
             selectedFiles.splice(index, 1); // Delete file from list
             renderFileList(); // Update render
