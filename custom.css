@@ -165,7 +165,8 @@ body {
     color: #FFFFFF;
 }
 
-.side-nav a:hover{
+.side-nav a:hover,
+.side-nav a:hover#active {
     background: var(--btn-bg);
     color: #FFFFFF;
 }
