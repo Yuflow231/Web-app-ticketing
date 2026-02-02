@@ -6,6 +6,7 @@ hamburger.addEventListener("click", () => {
     updateSidebarWidth();
 })
 
+
 // Function to overide the sidebar width value
 function updateSidebarWidth() {
     if(sidebar.classList.contains("collapsed")) {
@@ -19,7 +20,7 @@ function updateSidebarWidth() {
 
 window.addEventListener("load", () => {
     var w = window.innerWidth;
-    if(w < 768) {
+    if(w < 800) {
         sidebar.classList.add("collapsed");
         updateSidebarWidth();
     }

@@ -41,6 +41,9 @@ body {
     margin: 0;
 }
 
+li{
+    margin-bottom: 0.5rem;
+}
 /* Button styles */
 .btn {
     background-color: var(--primary);
@@ -300,7 +303,7 @@ table th {
     background-color: #285991;
     color: #FFFFFF;
     text-align: left;
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1rem;
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -308,7 +311,7 @@ table th {
 
 /* Cell Styling */
 table td {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1rem;
     color: #333333;
     font-size: 1rem;
 }
@@ -455,9 +458,6 @@ form input[type="file"] {
     transition: 0.3s ease;
 }
 
-#file-list li{
-    margin-bottom: 0.25rem;
-}
 
 .removeBtn:hover{
     background-color: var(--return-hover);
@@ -542,6 +542,10 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     flex: 0.75;
+}
+.profile-card.full-width {
+    flex-basis: 100%; /*force the element to take the entire width of the container, leading to a line break*/
+    margin: 1rem;
 }
 
 .profile-header {
@@ -653,7 +657,7 @@ p {
     position: relative;
 }
 
-.lifecycle-step.active {
+.lifecycle-step.achieved {
     color: var(--primary-dark);
 }
 .lifecycle-step.current {
@@ -661,8 +665,8 @@ p {
 }
 
 /* Status Badges */
-.status-badge,
-.priority-badge{
+.badge{
+    display: inline-block ;
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
     font-size: 0.8rem;
@@ -670,24 +674,13 @@ p {
     color: white;
 }
 
-.status-badge.new {
-    background-color: #3498db;
+.blue {background-color: #3498db;
 }
-
-.status-badge.completed,
-.priority-badge.low{
-    background-color: #27ae60;
+.green{background-color: #27ae60;
 }
-
-.status-badge.in-progress,
-.status-badge.on-hold,
-.priority-badge.medium{
-    background-color: #f39c12;
+.orange{background-color: #f39c12;
 }
-
-.status-badge.closed,
-.priority-badge.high{
-    background-color: #f31212;
+.red{background-color: #f31212;
 }
 /* Collaborator Styling */
 .collab-item {
@@ -695,6 +688,7 @@ p {
     align-items: center;
     gap: 10px;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Mini Avatars for Table */
@@ -707,15 +701,9 @@ p {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid var(--primary);
     object-fit: cover;
 }
-
-.mini-avatar.grayscale {
-    filter: grayscale(1);
-    opacity: 0.5;
-}
-
 
 /* Sidebar Collaborator Layout */
 .collab-item {
@@ -734,7 +722,7 @@ p {
     color: #333;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     :root{
         --side-nav-width: 3.5rem;
     }

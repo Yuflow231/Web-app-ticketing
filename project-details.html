@@ -70,12 +70,19 @@
                         #101
                     </p>
                 </div>
-                <div class="detail-item">
-                    <label>Status</label>
-                    <p>
-                        On Going
-                    </p>
+                <div class="two-elements-line">
+                    <div class="detail-item">
+                        <label>Status</label>
+                        <span class="badge green">On Going</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Closing date</label>
+                        <p id="ending-date">
+                            24/10/2025
+                        </p>
+                    </div>
                 </div>
+
                 <div class="detail-item">
                     <label>Detailed Description</label>
                     <p id="project-description">
@@ -86,7 +93,7 @@
                     </p>
                 </div>
 
-                <div class="form-2elements" style="margin-top: 2rem;">
+                <div class="two-elements-line" style="margin-top: 2rem;">
                     <div class="detail-item">
                         <label>Estimated Time</label>
                         <p id="est-time">120 Hours</p>
@@ -96,6 +103,7 @@
                         <p id="actual-time">45.5 Hours</p>
                     </div>
                 </div>
+
 
                 <div><button class="btn">Edit</button></div>
             </section>
@@ -107,8 +115,15 @@
                         <div class="collab-item">
                             <img src="https://via.placeholder.com/40" class="profile-pic" alt="profile-picture" style="width:40px; height:40px;">
                             <div class="name-group">
+                                <strong>Kevinthegreat</strong>
+                                <span class="user-role">Maintainer</span>
+                            </div>
+                        </div>
+                        <div class="collab-item">
+                            <img src="https://via.placeholder.com/40" class="profile-pic" alt="profile-picture" style="width:40px; height:40px;">
+                            <div class="name-group">
                                 <strong>VicIsACat</strong>
-                                <span class="user-role">Lead Developer</span>
+                                <span class="user-role">Cat</span>
                             </div>
                         </div>
                     </div>
@@ -125,7 +140,7 @@
                     </div>
                 </section>
             </div>
-            <div class="profile-card">
+            <div class="profile-card full-width">
                 <h2>Linked Tickets</h2>
                 <div class="table-card" style="margin-top: 0.5rem;">
                     <table style="width: 100%; font-size: 0.9rem;">
@@ -134,25 +149,36 @@
                             <th>ID</th>
                             <th>Ticket Title</th>
                             <th>Status</th>
+                            <th>Priority</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>#101</td>
-                            <td>Fix Login Auth</td>
-                            <td><span class="status-badge in-progress">In Progress</span></td>
-                            <td><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                            <td data-label="ID">#101</td>
+                            <td data-label="Title"><strong>Customizable UI bars</strong></td>
+                            <td data-label="Status"><span class="badge orange">In Progress</span></td>
+                            <td data-label="Priority"><span class="badge orange">Medium</span></td>
+                            <td data-label="Action"><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                         </tr>
                         <tr>
-                            <td>#105</td>
-                            <td>Implement Dark Mode</td>
-                            <td><span class="status-badge new">New</span></td>
-                            <td><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                            <td data-label="ID">#105</td>
+                            <td data-label="Title"><strong>Implement Dark Mode</strong></td>
+                            <td data-label="Status"><span class="badge blue">New</span></td>
+                            <td data-label="Priority"><span class="badge green">Low</span></td>
+                            <td data-label="Action"><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="profile-card full-width">
+                <h2>Files associated</h2>
+                <button class="btn">Edit documents</button>
+                <ul>
+                    <li>Business Contract</li>
+                    <li>User stories</li>
+                </ul>
             </div>
         </div>
     </main>

@@ -59,13 +59,13 @@
     <!-- Page content -->
     <main class="main-content">
         <header class="page-header">
-            <h1>Ticket #101: Fix Login Authentication</h1>
+            <h1>Ticket #101: Customizable UI bars</h1>
         </header>
 
         <div class="ticket-lifecycle-container">
-            <div class="lifecycle-step active">New</div>
+            <div class="lifecycle-step achieved">New</div>
+            <div class="lifecycle-step achieved">To be Approved</div>
             <div class="lifecycle-step current">In Progress</div>
-            <div class="lifecycle-step">To be Approved</div>
             <div class="lifecycle-step">Completed</div>
         </div>
 
@@ -73,12 +73,12 @@
             <section class="profile-card">
                 <div class="detail-item">
                     <label>Title</label>
-                    <h2 style="margin: 0;">Fix Login Authentication Error</h2>
+                    <h2 style="margin: 0;">Customizable UI bars</h2>
                 </div>
 
                 <div class="detail-item" style="margin-top: 2rem;">
                     <label>Detailed Description</label>
-                    <p>Users are reporting a 500 error when attempting to log in via the mobile application. This seems to be related to the token refresh logic implemented in the last sprint. Needs immediate investigation of the auth-service logs.</p>
+                    <p>Create modulable and customizable bars to replace the default bars of Hypixel Skyblock</p>
                 </div>
 
                 <div class="two-elements-line" style="margin-top: 2rem;">
@@ -94,7 +94,7 @@
 
                 <div class="two-elements-line" style="margin-top: auto; padding-top: 1rem;">
                     <button class="btn">Update Ticket</button>
-                    <button class="btn" style="background-color: var(--return);" >Close Ticket</button>
+                    <button class="btn" style="background-color: var(--return);">Close Ticket</button>
                 </div>
             </section>
 
@@ -103,15 +103,15 @@
                     <h2>Classification</h2>
                     <div class="detail-item">
                         <label>Status</label>
-                        <span class="status-badge in-progress">In Progress</span>
+                        <span class="badge green">In Progress</span>
                     </div>
                     <div class="detail-item">
                         <label>Priority</label>
-                        <span class="priority-badge low">low</span>
+                        <span class="badge orange">Medium</span>
                     </div>
                     <div class="detail-item">
                         <label>Type</label>
-                        <span>Billable</span>
+                        <span>Included</span>
                     </div>
                 </section>
 
@@ -119,15 +119,21 @@
                     <h2>Assigned Collaborators</h2>
                     <div class="collaborator-list">
                         <div class="collab-item">
-                            <img src="https://via.placeholder.com/30" class="profile-pic" alt="profile-picture" style="width:30px; height:30px;">
-                            <span>Sarah Jenkins (Lead)</span>
-                        </div>
-                        <div class="collab-item" style="margin-top: 0.5rem;">
-                            <img src="https://via.placeholder.com/30" class="profile-pic" alt="profile-picture" style="width:30px; height:30px;">
-                            <span>Mark Thompson</span>
+                            <img src="https://via.placeholder.com/40" class="profile-pic" alt="profile-picture" style="width:40px; height:40px;">
+                            <div class="name-group">
+                                <strong>VicIsACat</strong>
+                            </div>
                         </div>
                     </div>
                 </section>
+            </div>
+
+            <div class="profile-card full-width">
+                <h2>Files associated</h2>
+                <button class="btn">Edit documents</button>
+                <ul>
+                    <li>Visual Examples</li>
+                </ul>
             </div>
         </div>
     </main>
