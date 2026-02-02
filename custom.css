@@ -335,6 +335,12 @@ table tbody tr:last-child td {
     border-bottom: none;
 }
 
+table a.icon{
+    font-size: 18px;
+    color: var(--btn-bg);
+    vertical-align: middle;
+}
+
 .table-btns {
     margin-left: 1rem;
 }
@@ -400,7 +406,7 @@ select:focus, input:focus {
 /*-------------------------------*/
 /*|      Form Layout Styles     |*/
 /*-------------------------------*/
-.form-2elements {
+.two-elements-line {
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
@@ -652,4 +658,106 @@ form input[type="file"] {
         flex: 1;
     }
 
+}
+
+/*------------------------------*/
+/* Ticket Lifecycle Bar */
+.ticket-lifecycle-container {
+    display: flex;
+    justify-content: space-between;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    position: relative;
+}
+
+.lifecycle-step {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ccc;
+    position: relative;
+}
+
+.lifecycle-step.active {
+    color: var(--nav-bar-active);
+}
+.lifecycle-step.current {
+    color: var(--btn-bg); text-decoration: underline;
+}
+
+/* Status Badges */
+.status-badge,
+.priority-badge{
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-badge.new {
+    background-color: #3498db;
+}
+
+.status-badge.completed,
+.priority-badge.low{
+    background-color: #27ae60;
+}
+
+.status-badge.in-progress,
+.status-badge.on-hold,
+.priority-badge.medium{
+    background-color: #f39c12;
+}
+
+.priority-badge.high{
+    background-color: #f31212;
+}
+/* Collaborator Styling */
+.collab-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+/* Mini Avatars for Table */
+.collab-avatars {
+    display: flex;
+    gap: -5px; /* Slight overlap for modern look */
+}
+
+.mini-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.mini-avatar.grayscale {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+
+/* Sidebar Collaborator Layout */
+.collab-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.collab-item .name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-item strong {
+    font-size: 0.9rem;
+    color: #333;
 }

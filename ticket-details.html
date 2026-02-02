@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketingApp - Ticket</title>
+    <link href="custom.css" rel="stylesheet"/>
+    <script src="side-bar.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bars -->
+    <nav class="navigation">
+        <header class="top-bar">
+            <div class="menu-bar">
+                <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
+                <span>| Ticketing app shenanigans</span>
+            </div>
+            <div class="user-profile-header">
+                <a href="profile.html">
+                    <span class="username" data-type="first-name">User</span>
+                    <span class="username" data-type="last-name">Name</span>
+                    <!-- placeholder using my YouTube profile pic -->
+                    <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
+                </a>
+            </div>
+        </header>
+
+        <!-- Side navigation bar -->
+        <div class="side-nav">
+            <div class="top-side">
+                <a href="dashBoard.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="projects.html">
+                    <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <span class="text">Projects</span>
+                </a>
+                <a href="tickets.html" id="active">
+                    <span class="icon"><i class="fa-solid fa-ticket"></i></span>
+                    <span class="text">Tickets</span>
+                </a>
+                <a href="profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="text">Profile</span>
+                </a>
+            </div>
+
+            <a href="index.html">
+                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span class="text">Logout</span>
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Ticket #101: Fix Login Authentication</h1>
+        </header>
+
+        <div class="ticket-lifecycle-container">
+            <div class="lifecycle-step active">New</div>
+            <div class="lifecycle-step current">In Progress</div>
+            <div class="lifecycle-step">To be Approved</div>
+            <div class="lifecycle-step">Completed</div>
+        </div>
+
+        <div class="profile-container">
+            <section class="profile-card">
+                <div class="detail-item">
+                    <label>Title</label>
+                    <h2 style="margin: 0;">Fix Login Authentication Error</h2>
+                </div>
+
+                <div class="detail-item" style="margin-top: 2rem;">
+                    <label>Detailed Description</label>
+                    <p>Users are reporting a 500 error when attempting to log in via the mobile application. This seems to be related to the token refresh logic implemented in the last sprint. Needs immediate investigation of the auth-service logs.</p>
+                </div>
+
+                <div class="two-elements-line" style="margin-top: 2rem;">
+                    <div class="detail-item">
+                        <label>Actual Time Spent</label>
+                        <p>4.5 Hours</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Estimated Time</label>
+                        <p>8.0 Hours</p>
+                    </div>
+                </div>
+
+                <div class="two-elements-line" style="margin-top: auto; padding-top: 1rem;">
+                    <button class="btn">Update Ticket</button>
+                    <button class="btn" style="background-color: var(--backBtn-bg);">Close Ticket</button>
+                </div>
+            </section>
+
+            <div class="profile-sidebar">
+                <section class="profile-card mini">
+                    <h2>Classification</h2>
+                    <div class="detail-item">
+                        <label>Status</label>
+                        <span class="status-badge in-progress">In Progress</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Priority</label>
+                        <span class="priority-badge low">low</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Type</label>
+                        <span>Billable</span>
+                    </div>
+                </section>
+
+                <section class="profile-card mini">
+                    <h2>Assigned Collaborators</h2>
+                    <div class="collaborator-list">
+                        <div class="collab-item">
+                            <img src="https://via.placeholder.com/30" class="profile-pic" alt="profile-picture" style="width:30px; height:30px;">
+                            <span>Sarah Jenkins (Lead)</span>
+                        </div>
+                        <div class="collab-item" style="margin-top: 0.5rem;">
+                            <img src="https://via.placeholder.com/30" class="profile-pic" alt="profile-picture" style="width:30px; height:30px;">
+                            <span>Mark Thompson</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
