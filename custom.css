@@ -1,25 +1,26 @@
 :root {
-    /* nav bars*/
-    --side-nav-width: 12rem; /*needs to be there by default to avoid weird shenanigans*/
+    /* Layout Dimensions */
+    --side-nav-width: 12rem;
     --top-nav-height: 4rem;
 
-    --nav-bar-active: #285991;
+    /* Colors */
+    --primary: #0E94D4;
+    --primary-dark: #285991;
+    --primary-hover: #2C7AB9;
+    --bg-main: #EEEEEE;
+    --bg-card: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #888888;
+    --return: #f00000;
+    --return-hover: #C91313;
 
+    /* Status Colors */
+    --status-new: #3498DB;
+    --status-progress: #F39C12;
+    --status-done: #27AE60;
 
-    /* card */
-    --card-bg: #FFFFFF;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-
-    /* form */
-    --form-bg: #FFFFFF;
-
-    --backBtn-bg: #E30000;
-    --backBtn-hover-bg: #C91313;
-
-    /* buttons */
-    --btn-bg: #0E94D4;
-    --btn-color: #FFFFFF;
-    --btn-hover-bg: #2c74af;
+    /* Shadow */
+    --shadow: #00000019;
 }
 
 * {
@@ -31,28 +32,19 @@ a{
 }
 
 h1, h2 {
-    color: #333333;
+    color: var(--text-main);
 }
 
 body {
-    background-color: #EEEEEE;
+    background-color: var(--bg-main);
     display: flex;
     margin: 0;
 }
 
-/* Utility class to kill transitions temporarily */
-.no-transition {
-    transition: none !important;
-}
-
-.preload * {
-    transition: none !important;
-}
-
 /* Button styles */
 .btn {
-    background-color: var(--btn-bg);
-    color: var(--btn-color);
+    background-color: var(--primary);
+    color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -62,7 +54,7 @@ body {
 }
 
 .btn:hover {
-    background-color: var(--btn-hover-bg);
+    background-color: var(--primary-hover);
     translate: 0 -0.2rem;
     box-shadow: 0 0.2rem 0 #00000040;
 }
@@ -73,7 +65,7 @@ body {
 }
 
 .password{
-    color: var(--btn-bg);
+    color: var(--primary);
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
 }
@@ -139,7 +131,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%; /* Makes the image circular */
-    border: 2px solid var(--btn-bg); /* Uses your existing blue */
+    border: 2px solid var(--primary); /* Uses your existing blue */
     object-fit: cover;
     vertical-align: middle;
 }
@@ -189,13 +181,13 @@ body {
 }
 
 .side-nav a#active {
-    background: var(--nav-bar-active);
+    background: var(--primary-dark);
     color: #FFFFFF;
 }
 
 .side-nav a:hover,
 .side-nav a:hover#active {
-    background: var(--btn-bg);
+    background: var(--primary-hover);
     color: #FFFFFF;
 }
 
@@ -225,7 +217,7 @@ body {
 }
 
 .side-nav > a:last-child:hover {
-    background: var(--backBtn-hover-bg);
+    background: var(--return-hover);
     border-top: 2px solid #7a0808;
 }
 
@@ -290,7 +282,7 @@ body {
 /*-------- Modern Table Styles ----------*/
 
 .table-card {
-    background-color: var(--card-bg);
+    background-color: var(--bg-card);
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -337,7 +329,7 @@ table tbody tr:last-child td {
 
 table a.icon{
     font-size: 18px;
-    color: var(--btn-bg);
+    color: var(--primary);
     vertical-align: middle;
 }
 
@@ -368,7 +360,7 @@ form {
     max-width: 100%;
     margin: 1rem;
     padding: 1.5rem 2rem;
-    background-color: var(--form-bg);
+    background-color: var(--bg-card);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -455,7 +447,7 @@ form input[type="file"] {
 
 .removeBtn{
     margin-left: 0.5rem;
-    background-color: var(--backBtn-bg);
+    background-color: var(--return);
     border-radius: 0.5rem;
     color: #FFFFFF;
     border: none;
@@ -468,7 +460,7 @@ form input[type="file"] {
 }
 
 .removeBtn:hover{
-    background-color: var(--backBtn-hover-bg);
+    background-color: var(--return-hover);
     color: #efefef;
     transform: scale(1.1);
 }
@@ -480,40 +472,34 @@ form input[type="file"] {
 /*-------------------------------*/
 /*|        Dashboard Styles      |*/
 /*-------------------------------*/
-.project-card,
-.stat-card{
-    background-color: var(--card-bg);
+.card{
+    background-color: var(--bg-card);
     border-radius: 8px;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 6px var(--shadow);
     padding: 1rem;
     transition: 0.3s ease;
+    display: flex;
 }
 
-.project-card:hover,
-.stat-card:hover{
+.flex-column{
+    flex-direction: column;
+}
+
+.card:hover{
     translate: 0 -0.2rem;
 }
 
-.project-card h3{
-    margin: 0 0 0.5rem 0;
-    color: #0E94D4;
-}
-
-.project-card p {
+p {
     margin: 0.5rem 0;
     color: #555555;
 }
 
-.stat-card{
-    display: flex;
-}
-
-.stat-card h3{
+.card h3{
     font-size: 1.5rem;
     margin: 0 0 0.5rem 0;
     color: #0E94D4;
 }
-.stat-card .icon{
+.card .icon{
     font-size: 3rem;
     color: #285991;
 }
@@ -551,7 +537,7 @@ form input[type="file"] {
 .profile-card {
     margin: 1rem;
     padding: 1.5rem 2rem;
-    background-color: var(--form-bg);
+    background-color: var(--bg-card);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -596,7 +582,7 @@ form input[type="file"] {
 
 /* Typography for profile info */
 .user-role {
-    color: var(--btn-bg);
+    color: var(--primary);
     font-weight: bold;
     margin: 0.2rem 0;
 }
@@ -644,32 +630,17 @@ form input[type="file"] {
     text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-    :root{
-        --side-nav-width: 3.5rem;
-    }
-
-    .main-content{
-        margin-left: 3.5rem;
-        width: calc(100% - 3.5rem);
-    }
-
-    .profile-card{
-        flex: 1;
-    }
-
-}
 
 /*------------------------------*/
 /* Ticket Lifecycle Bar */
 .ticket-lifecycle-container {
     display: flex;
     justify-content: space-between;
-    background: var(--card-bg);
+    background: var(--bg-card);
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 4px var(--card-shadow);
+    box-shadow: 0 2px 4px var(--shadow);
     position: relative;
 }
 
@@ -683,10 +654,10 @@ form input[type="file"] {
 }
 
 .lifecycle-step.active {
-    color: var(--nav-bar-active);
+    color: var(--primary-dark);
 }
 .lifecycle-step.current {
-    color: var(--btn-bg); text-decoration: underline;
+    color: var(--primary); text-decoration: underline;
 }
 
 /* Status Badges */
@@ -714,6 +685,7 @@ form input[type="file"] {
     background-color: #f39c12;
 }
 
+.status-badge.closed,
 .priority-badge.high{
     background-color: #f31212;
 }
@@ -760,4 +732,80 @@ form input[type="file"] {
 .collab-item strong {
     font-size: 0.9rem;
     color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+    :root{
+        --side-nav-width: 3.5rem;
+    }
+
+    .main-content{
+        margin-left: 3.5rem;
+        width: calc(100% - 3.5rem);
+    }
+
+    .profile-card{
+        flex: 1;
+    }
+
+    /* Stack table elements */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table-card{
+        background-color: var(--primary-dark);
+    }
+    /* Hide the original header row */
+    thead tr {
+        display: none;
+    }
+
+    tr {
+        border: 1px solid #ddd;
+        border-radius: 8px; /* Round the card corners */
+        margin-bottom: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: var(--bg-card);
+        box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 40% !important;
+        border-bottom: 2px solid #E0E0E0;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 0.85rem;
+    }
+
+    td:last-child {
+        border-bottom: 0;
+    }
+
+    /* Make the labels smaller and more subtle */
+    td::before {
+        position: absolute;
+        left: 0.75rem;
+        width: 35%;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label);
+        color: var(--text-muted); /* Greyer color for labels to make data pop */
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .progress-container{
+        justify-content: left;
+    }
+
+    /* Compact the avatar group for mobile */
+    .collab-avatars {
+        justify-content: flex-start;
+        transform: scale(0.9);
+        transform-origin: left;
+    }
 }

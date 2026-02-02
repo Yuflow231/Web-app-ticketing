@@ -66,14 +66,14 @@
         <!-- Statistic Section -->
         <section id="statistics">
             <div class="grid-content">
-                <div class="stat-card">
+                <div class="card">
                     <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
                     <div class="stat-details">
                         <h3>45</h3>
                         <p class="text">Active projects</p>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="card">
                     <div class="icon"><i class="fa-solid fa-ticket"></i></div>
                     <div class="stat-details">
                         <div class="stat-details">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="card">
                     <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
                     <div class="stat-details">
                         <div class="stat-details">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="stat-card">
+                <div class="card">
                     <div class="icon"><i class="fa-solid fa-ban"></i></div>
                     <div class="stat-details">
                         <div class="stat-details">
@@ -107,40 +107,40 @@
         <section id="projects">
             <h2>Recent projects</h2>
             <div class="grid-content">
-                <div class="project-card">
+                <div class="card flex-column">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
+                    <p>Status:  <span class="status-badge in-progress">In Progress</span></p>
                 </div>
-                <div class="project-card">
+                <div class="card flex-column">
                     <h3>Project B</h3>
                     <p>Tickets: 8</p>
-                    <p>Status: Completed</p>
+                    <p>Status:  <span class="status-badge completed">Completed</span></p>
                 </div>
-                <div class="project-card">
+                <div class="card flex-column">
+                    <h3>Project C</h3>
+                    <p>Tickets: 1</p>
+                    <p>Status:  <span class="status-badge closed">Closed</span></p>
+                </div>
+                <div class="card flex-column">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
+                    <p>Status:  <span class="status-badge in-progress">In Progress</span></p>
                 </div>
-                <div class="project-card">
+                <div class="card flex-column">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
+                    <p>Status:  <span class="status-badge in-progress">In Progress</span></p>
                 </div>
-                <div class="project-card">
+                <div class="card flex-column">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
+                    <p>Status:  <span class="status-badge in-progress">In Progress</span></p>
                 </div>
-                <div class="project-card">
+                <div class="card flex-column">
                     <h3>Project A</h3>
                     <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
-                </div>
-                <div class="project-card">
-                    <h3>Project A</h3>
-                    <p>Tickets: 12</p>
-                    <p>Status: In Progress</p>
+                    <p>Status: <span class="status-badge in-progress">In Progress</span></p>
                 </div>
 
             </div>
@@ -155,25 +155,40 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
+                        <th>Project</th>
                         <th>Status</th>
-                        <th>Due to</th>
                         <th>Priority</th>
+                        <th>Assigned</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>#101</td>
-                        <td>Fix login issue</td>
-                        <td>Open</td>
-                        <td>Date.exe</td>
-                        <td>High</td>
+                        <td data-label="ID">#101</td>
+                        <td data-label="Title"><strong>Fix Login Authentication</strong></td>
+                        <td data-label="Project">Mobile App</td>
+                        <td data-label="Status"><span class="status-badge in-progress">In Progress</span></td>
+                        <td data-label="Priority"><span class="priority-badge high">High</span></td>
+                        <td data-label="Assigned">
+                            <div class="collab-avatars">
+                                <img src="https://via.placeholder.com/25" title="Sarah Jenkins" alt="profile" class="mini-avatar">
+                                <img src="https://via.placeholder.com/25" title="Mark Thompson" alt="profile" class="mini-avatar">
+                            </div>
+                        </td>
+                        <td data-label="Actions"><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                     </tr>
                     <tr>
-                        <td>#102</td>
-                        <td>Update dashboard UI</td>
-                        <td>In Progress</td>
-                        <td>Date.exe</td>
-                        <td>Medium</td>
+                        <td data-label="ID">#102</td>
+                        <td data-label="Title"><strong>Update Dashboard UI</strong></td>
+                        <td data-label="Project">Web App</td>
+                        <td data-label="Status"><span class="status-badge new">New</span></td>
+                        <td data-label="Priority"><span class="priority-badge medium">Medium</span></td>
+                        <td data-label="Assigned">
+                            <div class="collab-avatars">
+                                <img src="https://via.placeholder.com/25" title="Unassigned" alt="profile-picture" class="mini-avatar grayscale">
+                            </div>
+                        </td>
+                        <td data-label="Actions"></td>
                     </tr>
                     </tbody>
                 </table>
