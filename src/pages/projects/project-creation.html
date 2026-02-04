@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketingApp - Projects</title>
-    <link href="custom.css" rel="stylesheet"/>
-
-    <script src="drag&drop.js" defer></script>
-    <script src="side-bar.js" defer></script>
+    <title>Project creation - Ticketing App</title>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/drag-n-drop.js"></script>
 </head>
 <body>
-    <!-- Navigation bars -->
+    <!-- Navigation Bar -->
     <nav class="navigation">
         <header class="top-bar">
             <div class="menu-bar">
                 <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
-                <span>| Ticketing app shenanigans</span>
+                <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="username" data-type="first-name">User</span>
                     <span class="username" data-type="last-name">Name</span>
                     <!-- placeholder using my YouTube profile pic -->
@@ -29,81 +27,93 @@
             </div>
         </header>
 
-        <!-- Side navigation bar -->
+        <!-- Side Navigation Bar -->
         <div class="side-nav">
             <div class="top-side">
-                <a href="dashBoard.html">
+                <a href="/src/pages/dashBoard.html">
                     <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                     <span class="text">Dashboard</span>
                 </a>
-                <a href="projects.html" id="active">
+                <a href="/src/pages/projects/projects.html" class="active">
                     <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
                     <span class="text">Projects</span>
                 </a>
-                <a href="tickets.html">
+                <a href="/src/pages/tickets/tickets.html">
                     <span class="icon"><i class="fa-solid fa-ticket"></i></span>
                     <span class="text">Tickets</span>
                 </a>
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="text">Profile</span>
                 </a>
             </div>
 
-            <a href="index.html">
+            <a href="/index.html">
                 <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                 <span class="text">Logout</span>
             </a>
-
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="main-content">
         <header class="page-header">
             <h1>Project creation</h1>
         </header>
 
-        <form id="creation-form" class="form-box" action="/submit-project" method="POST">
-            <div class="two-elements-line">
+        <form id="project-form" class="form-box">
+            <div class="form-2elements">
                 <div class="form-item-stacked">
-                    <label for="project-name">Project's name</label>
+                    <label for="project-name">Project's name *</label>
                     <input type="text" id="project-name" name="project-name" placeholder="Project's name" required>
                 </div>
                 <div class="form-item-stacked">
-                    <label for="client-name">Client</label>
-                    <input type="text" id="client-name" name="client-name" placeholder="Your name" required>
+                    <label for="client-name">Client *</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Client name" required>
                 </div>
             </div>
 
-
-            <!-- Description -->
-            <label for="project-description">Description</label>
-            <textarea id="project-description" name="project-description" rows="8" placeholder="Project description" required></textarea>
-
-            <!-- Dates -->
-            <div class="two-elements-line">
+            <div class="form-2elements">
                 <div class="form-item-stacked">
                     <label for="start-date">Starting date</label>
-                    <input type="date" id="start-date" name="start-date" required>
+                    <input type="date" id="start-date" name="start-date">
                 </div>
-
                 <div class="form-item-stacked">
-                    <label for="end-date">Ending date (optional)</label>
+                    <label for="end-date">Estimated ending date</label>
                     <input type="date" id="end-date" name="end-date">
                 </div>
             </div>
 
-            <!-- File drop -->
-            <div class="form-item">
-                <label for="drop-file">Attach contract file</label>
+            <div class="form-item-stacked">
+                <label for="project-status">Status</label>
+                <select id="project-status" name="project-status">
+                    <option value="New">New</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="On Hold">On Hold</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="form-item-stacked">
+                <label for="project-description">Description</label>
+                <textarea id="project-description" name="project-description" rows="6" placeholder="Project's description"></textarea>
+            </div>
+
+            <div class="form-item-stacked">
+                <label for="drop-file">Attached files</label>
                 <div id="drop-zone">
-                    <p>Drag and drop file here or click to select file</p>
+                    <p>Drag and drop files here or click to select files</p>
                     <input type="file" id="drop-file" name="drop-file" style="display: none;">
                 </div>
                 <ul id="file-list"></ul>
             </div>
 
-            <div class="centered"><a href="projects.html"><button type="button" class="btn">Create project</button></a></div>
+            <div class="centered" style="display: flex; gap: var(--spacing-md); justify-content: center;">
+                <a href="/src/pages/projects/projects.html">
+                    <button type="button" class="btn btn--outline">Cancel</button>
+                </a>
+                <button type="submit" class="btn">Create project</button>
+            </div>
         </form>
     </main>
 </body>

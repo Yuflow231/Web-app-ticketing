@@ -131,9 +131,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .side-nav {
-        transform: translateX(-100%);
-    }
     
     .side-nav.open {
         transform: translateX(0);

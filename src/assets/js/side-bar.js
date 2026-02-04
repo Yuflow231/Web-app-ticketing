@@ -30,7 +30,7 @@ export class SideBar {
     }
 
     updateSidebarWidth() {
-        const width = this.sidebar.classList.contains('collapsed') ? '3.5rem' : '12rem';
+        const width = this.sidebar.classList.contains('collapsed') ? 'var(--side-nav-collapsed-width)' : 'var(--side-nav-opened-width)';
         document.documentElement.style.setProperty('--side-nav-width', width);
     }
 }

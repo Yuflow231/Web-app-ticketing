@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketingApp - Projects</title>
-    <link href="custom.css" rel="stylesheet"/>
-    <script src="side-bar.js" defer></script>
+    <title>Projects - Ticketing App</title>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
 </head>
 <body>
-    <!-- Navigation bars -->
+    <!-- Navigation Bar -->
     <nav class="navigation">
         <header class="top-bar">
             <div class="menu-bar">
                 <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
-                <span>| Ticketing app shenanigans</span>
+                <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="username" data-type="first-name">User</span>
                     <span class="username" data-type="last-name">Name</span>
                     <!-- placeholder using my YouTube profile pic -->
@@ -27,80 +26,85 @@
             </div>
         </header>
 
-        <!-- Side navigation bar -->
+        <!-- Side Navigation Bar -->
         <div class="side-nav">
             <div class="top-side">
-                <a href="dashBoard.html">
+                <a href="/src/pages/dashBoard.html">
                     <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                     <span class="text">Dashboard</span>
                 </a>
-                <a href="projects.html" id="active">
+                <a href="/src/pages/projects/projects.html" class="active">
                     <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
                     <span class="text">Projects</span>
                 </a>
-                <a href="tickets.html">
+                <a href="/src/pages/tickets/tickets.html">
                     <span class="icon"><i class="fa-solid fa-ticket"></i></span>
                     <span class="text">Tickets</span>
                 </a>
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="text">Profile</span>
                 </a>
             </div>
 
-            <a href="index.html">
+            <a href="/index.html">
                 <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                 <span class="text">Logout</span>
             </a>
-
         </div>
     </nav>
 
-    <!-- Page content -->
+    <!-- Main Content -->
     <main class="main-content">
         <header class="page-header">
             <div class="page-header-line">
                 <h2>My projects</h2>
-                <a href="project-creation.html"><button type="button" class="btn">New project</button></a>
+                <a href="/src/pages/projects/project-creation.html">
+                    <button type="button" class="btn">
+                        <i class="fa-solid fa-plus"></i>
+                        New project
+                    </button>
+                </a>
             </div>
             <div class="page-header-line">
                 <div class="filter">
                     <label for="status">Status</label>
                     <select id="status" name="status">
-                        <option value="On Going">On Going</option>
+                        <option value="">All</option>
+                        <option value="In Progress">In Progress</option>
                         <option value="On Hold">On Hold</option>
-                        <option value="Inactive">Inactive</option>
-                        <option  value="Closed">Closed</option>
+                        <option value="Completed">Completed</option>
                     </select>
                 </div>
                 <div class="filter">
-                    <label for="search">Search</label>
-                    <input type="text" id="search" name="search" placeholder="Search Project">
+                    <label for="search">Research</label>
+                    <input type="text" id="search" name="search" placeholder="Research a project">
                 </div>
+            </div>
+            <div>
+                <button class="btn"><i class="fa-solid fa-angle-left"></i></button>
+                <span>Page 1 of 1</span>
+                <button class="btn"><i class="fa-solid fa-angle-right"></i></button>
             </div>
         </header>
 
-        <!-- Project tab-->
-        <section class="projects-list">
-            <div class="table-btns table-header">
-                <button class="btn"><</button>
-                <span>Page 1 of 1</span>
-                <button class="btn">></button>
-            </div>
+        <!-- Projects section -->
+        <section class="project">
             <div class="table-card">
                 <table>
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Project name</th>
-                            <th>Client</th>
-                            <th>Status</th>
-                            <th>Progress</th>
-                            <th>Creation date</th>
-                            <th>Actions</th>
-                        </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Project name</th>
+                        <th>Client</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Creation date</th>
+                        <th>Actions</th>
+                    </tr>
                     </thead>
                     <tbody>
+                    <!-- Projects will be loaded here -->
                     <tr>
                         <td data-label="ID">#101</td>
                         <td data-label="Project name"><strong>Skyblocker</strong></td>
@@ -150,12 +154,12 @@
                     </tbody>
                 </table>
             </div>
-            <div class="table-btns table-footer">
-                <button class="btn"><</button>
-                <span>Page 1 of 1</span>
-                <button class="btn">></button>
-            </div>
         </section>
+        <div>
+            <button class="btn"><i class="fa-solid fa-angle-left"></i></button>
+            <span>Page 1 of 1</span>
+            <button class="btn"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
     </main>
 </body>
 </html>

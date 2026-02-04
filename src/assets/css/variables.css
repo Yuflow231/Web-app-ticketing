@@ -1,7 +1,8 @@
 :root {
     /* Navigation */
-    --side-nav-width: 12rem;
-    --side-nav-collapsed-width: 3.5rem;
+    --side-nav-width: 11rem;
+    --side-nav-opened-width: 11rem; /*keep in memory base width*/
+    --side-nav-collapsed-width: 4.5rem;
     --top-nav-height: 4rem;
     --nav-bar-active: #285991;
     --nav-bg: #323233;

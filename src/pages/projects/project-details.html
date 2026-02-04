@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketingApp - Projects</title>
-    <link href="custom.css" rel="stylesheet"/>
-    <script src="side-bar.js" defer></script>
+    <title>Ticket details - Ticketing App</title>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/drag-n-drop.js"></script>
 </head>
 <body>
-    <!-- Navigation bars -->
+    <!-- Navigation Bar -->
     <nav class="navigation">
         <header class="top-bar">
             <div class="menu-bar">
                 <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
-                <span>| Ticketing app shenanigans</span>
+                <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="username" data-type="first-name">User</span>
                     <span class="username" data-type="last-name">Name</span>
                     <!-- placeholder using my YouTube profile pic -->
@@ -27,32 +27,31 @@
             </div>
         </header>
 
-        <!-- Side navigation bar -->
+        <!-- Side Navigation Bar -->
         <div class="side-nav">
             <div class="top-side">
-                <a href="dashBoard.html">
+                <a href="/src/pages/dashBoard.html">
                     <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                     <span class="text">Dashboard</span>
                 </a>
-                <a href="projects.html" id="active">
+                <a href="/src/pages/projects/projects.html" class="active">
                     <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
                     <span class="text">Projects</span>
                 </a>
-                <a href="tickets.html">
+                <a href="/src/pages/tickets/tickets.html">
                     <span class="icon"><i class="fa-solid fa-ticket"></i></span>
                     <span class="text">Tickets</span>
                 </a>
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="text">Profile</span>
                 </a>
             </div>
 
-            <a href="index.html">
+            <a href="/index.html">
                 <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                 <span class="text">Logout</span>
             </a>
-
         </div>
     </nav>
 
@@ -62,8 +61,8 @@
             <h1 id="project-title-header">Project: Skyblocker</h1>
         </header>
 
-        <div class="profile-container" id="project-data-container" data-project-id="202">
-            <section class="profile-card">
+        <div class="profile-container" id="project-data-container">
+            <section class="card-wo-hover">
                 <div class="detail-item">
                     <label>ID</label>
                     <p id="project-id">
@@ -109,13 +108,13 @@
             </section>
 
             <div class="profile-sidebar">
-                <section class="profile-card mini">
+                <section class="card-wo-hover">
                     <h2>Project Team</h2>
                     <div id="collaborator-list">
                         <div class="collab-item">
                             <img src="https://via.placeholder.com/40" class="profile-pic" alt="profile-picture" style="width:40px; height:40px;">
                             <div class="name-group">
-                                <strong>Kevinthegreat</strong>
+                                <strong>Alex33856</strong>
                                 <span class="user-role">Maintainer</span>
                             </div>
                         </div>
@@ -129,18 +128,18 @@
                     </div>
                 </section>
 
-                <section class="profile-card mini">
+                <section class="card-wo-hover">
                     <h2>Statistics</h2>
                     <div class="detail-item">
                         <label>Completion</label>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 38%;"></div>
                         </div>
-                        <p style="font-size: 0.8rem; margin-top: 5px;">38% of estimated hours used</p>
+                        <p style="font-size: 0.8rem; margin-top: 5px;">38% of ticket completion</p>
                     </div>
                 </section>
             </div>
-            <div class="profile-card full-width">
+            <section class="card-wo-hover full-width">
                 <h2>Linked Tickets</h2>
                 <div class="table-card" style="margin-top: 0.5rem;">
                     <table style="width: 100%; font-size: 0.9rem;">
@@ -159,27 +158,27 @@
                             <td data-label="Title"><strong>Customizable UI bars</strong></td>
                             <td data-label="Status"><span class="badge orange">In Progress</span></td>
                             <td data-label="Priority"><span class="badge orange">Medium</span></td>
-                            <td data-label="Action"><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                            <td data-label="Action"><a href="/src/pages/tickets/ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                         </tr>
                         <tr>
                             <td data-label="ID">#105</td>
                             <td data-label="Title"><strong>Implement Dark Mode</strong></td>
                             <td data-label="Status"><span class="badge blue">New</span></td>
                             <td data-label="Priority"><span class="badge green">Low</span></td>
-                            <td data-label="Action"><a href="ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                            <td data-label="Action"><a href="/src/pages/tickets/ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="profile-card full-width">
+            </section>
+            <section class="card-wo-hover full-width">
                 <h2>Files associated</h2>
                 <button class="btn">Edit documents</button>
                 <ul>
                     <li>Business Contract</li>
                     <li>User stories</li>
                 </ul>
-            </div>
+            </section>
         </div>
     </main>
 </body>
