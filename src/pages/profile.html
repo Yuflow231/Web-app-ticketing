@@ -2,60 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketingApp - Dashboard</title>
-    <link href="custom.css" rel="stylesheet"/>
-
-    <script src="side-bar.js" defer></script>
+    <title>Profile - Ticketing App</title>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
 </head>
 <body>
-    <!-- Navigation bars -->
+    <!-- Navigation Bar -->
     <nav class="navigation">
         <header class="top-bar">
             <div class="menu-bar">
                 <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
-                <span>| Ticketing app shenanigans</span>
+                <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="profile.html">
+                <a href="/src/pages/profile.html">
                     <span class="username" data-type="first-name">User</span>
-                    <span class="username" data-type="last-name">Name</span>
-                    <!-- placeholder using my YouTube profile pic -->
+                    <span class="username" data-type="last-name">Name</span><!-- placeholder using my YouTube profile pic -->
                     <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
                 </a>
             </div>
         </header>
 
-        <!-- Side navigation bar -->
+        <!-- Side Navigation Bar -->
         <div class="side-nav">
             <div class="top-side">
-                <a href="dashBoard.html">
+                <a href="/src/pages/dashBoard.html">
                     <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
                     <span class="text">Dashboard</span>
                 </a>
-                <a href="projects.html">
+                <a href="/src/pages/projects/projects.html">
                     <span class="icon"><i class="fa-solid fa-diagram-project"></i></span>
                     <span class="text">Projects</span>
                 </a>
-                <a href="tickets.html">
+                <a href="/src/pages/tickets/tickets.html">
                     <span class="icon"><i class="fa-solid fa-ticket"></i></span>
                     <span class="text">Tickets</span>
                 </a>
-                <a href="profile.html" id="active">
+                <a href="/src/pages/profile.html" class="active">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="text">Profile</span>
                 </a>
             </div>
 
-            <a href="index.html">
+            <a href="/index.html">
                 <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                 <span class="text">Logout</span>
             </a>
-
         </div>
     </nav>
+
 
     <!-- Page content -->
     <main class="main-content">
@@ -89,7 +86,7 @@
                         <p>New York, USA</p>
                     </div>
                     <div>
-                        <button class="btn">Edit</button>
+                        <button type="button" class="btn">Edit</button>
                     </div>
                 </div>
             </section>

@@ -1,27 +1,41 @@
-var hamburger = document.querySelector(".hamburger");
-var sidebar = document.querySelector(".side-nav");
+/**
+ * SideBar navigation component
+ */
 
-hamburger.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
-    updateSidebarWidth();
-})
+export class SideBar {
+    constructor() {
+        this.sidebar = document.querySelector('.side-nav');
+        this.hamburger = document.querySelector('.hamburger');
+        
+        if (!this.sidebar || !this.hamburger) {
+            console.warn('SideBar elements not found');
+            return;
+        }
 
-
-// Function to overide the sidebar width value
-function updateSidebarWidth() {
-    if(sidebar.classList.contains("collapsed")) {
-        document.documentElement.style.setProperty('--side-nav-width', '3.5rem');
+        this.init();
     }
-    else {
-        document.documentElement.style.setProperty('--side-nav-width', '12rem');
+
+    init() {
+
+        // Toggle on hamburger click
+        this.hamburger.addEventListener('click', () => {
+            this.toggle();
+        });
+
+    }
+
+    toggle() {
+        this.sidebar.classList.toggle('collapsed');
+        this.updateSidebarWidth();
+    }
+
+    updateSidebarWidth() {
+        const width = this.sidebar.classList.contains('collapsed') ? '3.5rem' : '12rem';
+        document.documentElement.style.setProperty('--side-nav-width', width);
     }
 }
 
-
-window.addEventListener("load", () => {
-    var w = window.innerWidth;
-    if(w < 800) {
-        sidebar.classList.add("collapsed");
-        updateSidebarWidth();
-    }
-})
+// Initialize sidebar
+export function initSidebar() {
+    return new SideBar();
+}
