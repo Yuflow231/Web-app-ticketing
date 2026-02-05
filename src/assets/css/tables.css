@@ -5,24 +5,32 @@ table {
 }
 
 thead {
-    background: #f8f9fa;
+    background: var(--secondary-color);
 }
 
 th {
     text-align: left;
     padding: var(--spacing-md);
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-white);
     border-bottom: 2px solid #dee2e6;
+}
+
+tr {
+    border-bottom: 2px solid var(--bg-main);
+}
+
+tr:last-child{
+    border-bottom: none;
+}
+
+tr:hover {
+    background: rgba(0, 10, 40, 0.05);
 }
 
 td {
     padding: var(--spacing-md);
     border-bottom: 1px solid #dee2e6;
-}
-
-tr:hover {
-    background: #f8f9fa;
 }
 
 table a{
@@ -89,7 +97,7 @@ table a:hover{
     }
 
     .table-card{
-        background-color: var(--primary-dark);
+        background-color: var(--bg-main);
     }
     /* Hide the original header row */
     thead tr {
@@ -97,12 +105,20 @@ table a:hover{
     }
 
     tr {
-        border: 1px solid var(--bg-main);
+        border-bottom: var(--spacing-xs) solid var(--secondary-color);
+        border-top: var(--spacing-xs) solid var(--secondary-color);
         border-radius: var(--radius-md);
-        margin-bottom: var(--spacing-sm);
         padding: var(--spacing-xs) var(--spacing-sm);
         background: var(--bg-card);
         box-shadow: var(--shadow-sm);
+    }
+
+    tr:hover {
+        background: var(--bg-card); /* hide hover for mobile */
+    }
+
+    tr:last-child {
+        border-bottom: var(--spacing-xs) solid var(--secondary-color);
     }
 
     td {
@@ -112,7 +128,7 @@ table a:hover{
         border-bottom: 2px solid var(--bg-main);
         justify-content: flex-end;
         align-items: center;
-        font-size: 0.85rem;
+        font-size: var(--font-size-base);
     }
 
     td:last-child {

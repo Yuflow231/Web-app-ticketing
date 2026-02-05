@@ -73,6 +73,7 @@
 
 .user-profile-header:hover .profile-pic {
     scale: 1.1;
+    border-color: var(--primary-hover);
 }
 
 /* Side navigation */
@@ -82,7 +83,7 @@
     left: 0;
     width: var(--side-nav-width);
     height: calc(100vh - var(--top-nav-height));
-    background: var(--nav-bg);
+    background: var(--tertiary-color);
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;

@@ -129,6 +129,8 @@ section h2 {
 .profile-header .profile-pic{
     width: 9rem;
     height: 9rem;
+    outline: 4px solid var(--primary-color);
+    border: none;
 }
 
 .profile-header .name-group {
