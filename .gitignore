@@ -1,5 +1,8 @@
 .idea
+
 node_modules
-ouiouibaguette.bat
+vite.config.js
 package-lock.json
 package.json
+
+ouiouibaguette.bat

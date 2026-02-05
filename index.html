@@ -2,27 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TicketingApp</title>
-
-    <link href="custom.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ticketing App</title>
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
 </head>
 <body>
-
     <div id="login-box">
-        <form action="" method="get" class="form-content">
-            <h2>Login</h2>
+        <form id="login-form" class="form-content card-wo-hover">
+            <h2 style="text-align: center">Login</h2>
+
             <div class="form-item-stacked">
                 <label for="form-email">Email</label>
-                <input type="email" id="form-email" placeholder="Email" required>
+                <input type="email" id="form-email" name="email" placeholder="Email" required>
             </div>
+
             <div class="form-item-stacked">
                 <label for="form-password">Password</label>
-                <input type="password" id="form-password" placeholder="Password" required>
+                <input type="password" id="form-password" name="password" placeholder="Password" required>
             </div>
-            <div class="password"><a href="resetPassword.html">Forgot your password?</a></div>
-            <div class="centered"><a href="dashBoard.html" ><button id="send" type="button" class="btn">Login</button></a></div>
+
+            <div class="password">
+                <a href="/src/pages/reset-password.html">Forgot password ?</a>
+            </div>
+
+            <div class="centered">
+                <a href="src/pages/dashBoard.html"><button type="button" class="btn">Login</button></a>
+            </div>
         </form>
     </div>
-
 </body>
 </html>
