@@ -5,7 +5,6 @@
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .form-item,

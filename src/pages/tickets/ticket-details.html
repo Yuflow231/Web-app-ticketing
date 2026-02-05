@@ -18,7 +18,7 @@
                 <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="/src/pages/profile.html">
+                <a href="/src/pages/profile.html" class="user-profile-inline">
                     <span class="username" data-type="first-name">User</span>
                     <span class="username" data-type="last-name">Name</span>
                     <!-- placeholder using my YouTube profile pic -->
@@ -69,19 +69,19 @@
             <div class="lifecycle-step">Completed</div>
         </div>
 
-        <div class="profile-container">
-            <section class="card-wo-hover">
+        <div class="detail-container">
+            <section class="detail-card">
                 <div class="detail-item">
                     <label>Title</label>
-                    <h2 style="margin: 0;">Customizable UI bars</h2>
+                    <h2>Customizable UI bars</h2>
                 </div>
 
-                <div class="detail-item" style="margin-top: 2rem;">
+                <div class="detail-item" >
                     <label>Detailed Description</label>
                     <p>Create modulable and customizable bars to replace the default bars of Hypixel Skyblock</p>
                 </div>
 
-                <div class="two-elements-line" style="margin-top: 2rem;">
+                <div class="inline-elements">
                     <div class="detail-item">
                         <label>Actual Time Spent</label>
                         <p>4.5 Hours</p>
@@ -92,14 +92,14 @@
                     </div>
                 </div>
 
-                <div class="two-elements-line" style="margin-top: auto; padding-top: 1rem;">
+                <div class="inline-elements" style="margin-top: auto; padding-top: 1rem;">
                     <button class="btn">Update Ticket</button>
                     <button class="btn btn--danger">Close Ticket</button>
                 </div>
             </section>
 
-            <div class="profile-sidebar">
-                <section class="card-wo-hover mini">
+            <div class="detail-side">
+                <section class="detail-card">
                     <h2>Classification</h2>
                     <div class="detail-item">
                         <label>Status</label>
@@ -115,23 +115,28 @@
                     </div>
                 </section>
 
-                <section class="card-wo-hover mini">
+                <section class="detail-card">
                     <h2>Assigned Collaborators</h2>
-                    <div class="collaborator-list">
-                        <div class="collab-item">
-                            <img src="https://via.placeholder.com/40" class="profile-pic" alt="profile-picture" style="width:40px; height:40px;">
-                            <div class="name-group">
-                                <strong>VicIsACat</strong>
+                    <div id="collaborator-list">
+                        <div class="user-profile-inline" style="margin-bottom: var(--spacing-sm);">
+                            <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic" >
+                            <div class="item-stacked" style="margin-left: var(--spacing-sm);">
+                                <div>
+                                    <span class="username" data-type="first-name">VicIsACat</span>
+                                    <span class="username" data-type="last-name"></span>
+                                </div>
+                                <span class="user-role">Cat</span>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <div class="card-wo-hover full-width">
+            <div class="detail-card full-width" id="file-list">
                 <h2>Files associated</h2>
-                <button class="btn">Edit documents</button>
+                <button class="btn" style="margin-bottom: var(--spacing-sm)">Edit documents</button>
                 <ul>
+                    <li>Visual Examples</li>
                     <li>Visual Examples</li>
                 </ul>
             </div>

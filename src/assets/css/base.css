@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family), sans-serif;
     background-color: var(--bg-main);
     color: var(--text-primary);
     line-height: 1.6;
@@ -59,6 +59,50 @@ img {
     display: block;
 }
 
+.badge{
+    display: inline-block ;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+.blue {background-color: #3498db;}
+.green{background-color: #27ae60;}
+.orange{background-color: #f39c12;}
+.red{background-color: #f31212;}
+
+/* Progress bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-percentage {
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    align-self: center;
+    color: var(--text-primary);
+    margin-left: 0.5rem;
+}
+
+.progress-bar {
+    width: 75%;
+    height: 0.75rem;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+}
+
 /* Utility classes */
 .no-transition {
     transition: none !important;
@@ -83,4 +127,11 @@ img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-container{
+        justify-content: left;
+    }
 }

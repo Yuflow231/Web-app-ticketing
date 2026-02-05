@@ -25,6 +25,28 @@ tr:hover {
     background: #f8f9fa;
 }
 
+table a{
+    color: var(--primary-color);
+}
+
+table a:hover{
+    color: var(--primary-hover);
+}
+
+.avatar-line{
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.profile-pic-mini {
+    width: 25px;
+    height: 25px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--primary-color);
+    object-fit: cover;
+}
+
+
 .table-btns {
     display: flex;
     align-items: center;
@@ -55,6 +77,59 @@ tr:hover {
 .filter input,
 .filter select {
     padding: var(--spacing-sm);
-    border: 1px solid #ddd;
+    border: 1px solid var(--bg-main);
     border-radius: var(--radius-sm);
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    /* Stack table elements */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table-card{
+        background-color: var(--primary-dark);
+    }
+    /* Hide the original header row */
+    thead tr {
+        display: none;
+    }
+
+    tr {
+        border: 1px solid var(--bg-main);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: var(--bg-card);
+        box-shadow: var(--shadow-sm);
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 40% !important;
+        border-bottom: 2px solid var(--bg-main);
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 0.85rem;
+    }
+
+    td:last-child {
+        border-bottom: 0;
+    }
+
+    /* Make the labels smaller and more subtle */
+    td::before {
+        position: absolute;
+        left: 0.75rem;
+        width: 35%;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label);
+        color: var(--text-secondary); /* Greyer color for labels to make data pop */
+        font-size: var(--font-size-sm);
+        text-transform: uppercase;
+    }
 }

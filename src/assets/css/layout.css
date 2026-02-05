@@ -27,6 +27,19 @@
     margin: 0;
 }
 
+.inline-elements{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.item-stacked{
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* Grid layouts */
 .grid-content {
     display: grid;

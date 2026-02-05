@@ -1,0 +1,122 @@
+/* Layout for profile sections */
+.detail-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 60rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.detail-card {
+    margin: 1rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    flex: 0.75;
+
+}
+.detail-card.full-width {
+    flex-basis: 100%; /*force the element to take the entire width of the container, leading to a line break*/
+    margin: 1rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-header .username{
+    font-size: 2rem;
+}
+
+.profile-header .profile-pic{
+    width: 9rem;
+    height: 9rem;
+}
+
+.profile-header .name-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.detail-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Typography for profile info */
+.user-role {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.detail-item {
+    margin-bottom: 1.2rem;
+}
+
+.detail-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+/* Ensure the header inside profile-card spreads items */
+.detail-card .profile-header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/*------------------------------*/
+/* Ticket Lifecycle Bar */
+.ticket-lifecycle-container {
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow);
+    max-width: 60rem;
+    position: relative;
+}
+
+.lifecycle-step {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ccc;
+    position: relative;
+}
+
+.lifecycle-step.achieved {
+    color: var(--primary-dark);
+}
+.lifecycle-step.current {
+    color: var(--primary-color); text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+    .detail-card {
+        flex-basis: 100%; /*force the element to take the entire width of the container, leading to a line break*/
+        margin: 1rem;
+    }
+
+    .profile-header .profile-pic{
+        width: 12rem;
+        height: 12rem;
+    }
+}

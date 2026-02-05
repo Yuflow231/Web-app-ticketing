@@ -32,11 +32,10 @@
 }
 
 .hamburger {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl) !important;
     color: var(--text-white);
     cursor: pointer;
     transition: transform var(--transition-normal);
-    padding: var(--spacing-sm);
 }
 
 .hamburger:hover {
@@ -46,14 +45,21 @@
 /* User profile in top bar */
 .user-profile-header {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: var(--spacing-md);
     color: var(--text-white);
 }
 
+.user-profile-inline{
+    display: flex ;
+    align-items: center;
+}
+
 .username {
     font-size: var(--font-size-base);
     font-weight: 600;
+    margin-right: var(--spacing-sm);
 }
 
 .profile-pic {
@@ -61,7 +67,12 @@
     height: 50px;
     border-radius: var(--radius-full);
     object-fit: cover;
-    border: 2px solid var(--text-white);
+    border: 2px solid var(--primary-color);
+    transition: var(--transition-normal);
+}
+
+.user-profile-header:hover .profile-pic {
+    scale: 1.1;
 }
 
 /* Side navigation */

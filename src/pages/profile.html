@@ -17,9 +17,10 @@
                 <span>| Ticketing App</span>
             </div>
             <div class="user-profile-header">
-                <a href="/src/pages/profile.html">
+                <a href="/src/pages/profile.html" class="user-profile-inline">
                     <span class="username" data-type="first-name">User</span>
-                    <span class="username" data-type="last-name">Name</span><!-- placeholder using my YouTube profile pic -->
+                    <span class="username" data-type="last-name">Name</span>
+                    <!-- placeholder using my YouTube profile pic -->
                     <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s176-c-k-c0x00ffffff-no-rj" alt="User Profile" class="profile-pic" >
                 </a>
             </div>
@@ -60,8 +61,8 @@
             <h1>User Profile</h1>
         </header>
 
-        <div class="profile-container">
-            <section class="card-wo-hover">
+        <div class="detail-container">
+            <section class="detail-card">
                 <header class="profile-header">
                     <div class="name-group">
                         <div class="username" data-type="first-name">User</div>
@@ -72,7 +73,7 @@
                     <img src="https://yt3.ggpht.com/pz97Hxe-gW4DR1-S4HmoZopwKXppAHPajMDtCaSSM-3HNV31wECJmegkZAohyEh7qAbCNQAHUg=s600-c-k-c0x00ffffff-no-rj-rp-mo" alt="User Profile" class="profile-pic">
                 </header>
 
-                <div class="profile-details">
+                <div>
                     <div class="detail-item">
                         <label>Email Address</label>
                         <p>yuflow.uwu@example.com</p>
@@ -91,10 +92,10 @@
                 </div>
             </section>
 
-            <div class="profile-sidebar">
-                <section class="card-wo-hover mini">
+            <div class="detail-side">
+                <section class="detail-card">
                     <h2>Preferences</h2>
-                    <div class="form-item">
+                    <div class="form-item" style="width: 10rem;">
                         <label for="language-select">Language</label>
                         <select id="language-select">
                             <option>English (US)</option>
@@ -107,7 +108,7 @@
                     </div>
                 </section>
 
-                <section class="card-wo-hover mini">
+                <section class="detail-card">
                     <h2>Security</h2>
                     <div class="detail-item">
                         <label>Password</label>
