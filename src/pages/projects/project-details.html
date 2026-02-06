@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket details - Ticketing App</title>
+    <title>Project details - Ticketing App</title>
     <link rel="stylesheet" href="/src/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
-    <script type="module" src="/src/assets/js/main.js"></script>
-    <script type="module" src="/src/assets/js/drag-n-drop.js"></script>
+    <script type="module" src="/src/assets/js/side-bar.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -104,7 +103,10 @@
                 </div>
 
 
-                <div><button class="btn">Edit</button></div>
+                <div class="inline-elements" style="margin-top: auto; padding-top: 1rem;">
+                    <button class="btn">Update Project</button>
+                    <button class="btn btn--danger">Close Project</button>
+                </div>
             </section>
 
             <div class="detail-side">
@@ -112,7 +114,7 @@
                     <h2>Project Team</h2>
                     <div id="collaborator-list">
                         <div class="user-profile-inline" style="margin-bottom: var(--spacing-sm);" >
-                            <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic" >
+                            <img src="/src/assets/images/icon.png" alt="User Profile" class="profile-pic" >
                             <div class="item-stacked" style="margin-left: var(--spacing-sm);">
                                 <div>
                                     <span class="username" data-type="first-name">Alex33856</span>
@@ -122,7 +124,7 @@
                             </div>
                         </div>
                         <div class="user-profile-inline" style="margin-bottom: var(--spacing-sm);">
-                            <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic" >
+                            <img src="/src/assets/images/icon.png" alt="User Profile" class="profile-pic" >
                             <div class="item-stacked" style="margin-left: var(--spacing-sm);">
                                 <div>
                                     <span class="username" data-type="first-name">VicIsACat</span>

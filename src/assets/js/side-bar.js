@@ -1,41 +1,29 @@
 /**
- * SideBar navigation component
+ * SideBar navigation
  */
 
-export class SideBar {
-    constructor() {
-        this.sidebar = document.querySelector('.side-nav');
-        this.hamburger = document.querySelector('.hamburger');
-        
-        if (!this.sidebar || !this.hamburger) {
-            console.warn('SideBar elements not found');
-            return;
-        }
+let hamburger = document.querySelector(".hamburger");
+let sidebar = document.querySelector(".side-nav");
 
-        this.init();
-    }
+hamburger.addEventListener("click", () => {
+    toggle();
+})
 
-    init() {
-
-        // Toggle on hamburger click
-        this.hamburger.addEventListener('click', () => {
-            this.toggle();
-        });
-
-    }
-
-    toggle() {
-        this.sidebar.classList.toggle('collapsed');
-        this.updateSidebarWidth();
-    }
-
-    updateSidebarWidth() {
-        const width = this.sidebar.classList.contains('collapsed') ? 'var(--side-nav-collapsed-width)' : 'var(--side-nav-opened-width)';
-        document.documentElement.style.setProperty('--side-nav-width', width);
-    }
+function toggle() {
+    sidebar.classList.toggle('collapsed');
+    updateSidebarWidth();
 }
 
-// Initialize sidebar
-export function initSidebar() {
-    return new SideBar();
+function updateSidebarWidth() {
+    const width = sidebar.classList.contains('collapsed') ? 'var(--side-nav-collapsed-width)' : 'var(--side-nav-opened-width)';
+    document.documentElement.style.setProperty('--side-nav-width', width);
 }
+
+
+window.addEventListener("load", () => {
+    let w = window.innerWidth;
+    if(w < 768) {
+        sidebar.classList.add("collapsed");
+        updateSidebarWidth();
+    }
+})

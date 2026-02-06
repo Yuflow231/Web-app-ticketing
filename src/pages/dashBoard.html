@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Ticketing App</title>
     <link rel="stylesheet" href="/src/assets/css/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
-    <script type="module" src="/src/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+    <script type="module" src="/src/assets/js/side-bar.js"></script>
+
+    <link rel="icon" type="image/png" href="/src/assets/images/icon.png" />
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -101,14 +103,14 @@
             <div class="grid-content" id="recent-projects">
                 <!-- Projects will be loaded here -->
                 <div class="card flex-column">
-                    <h3>Project A</h3>
-                    <p>Tickets: 12</p>
-                    <p>Status:  <span class="badge orange">In Progress</span></p>
+                    <h3>Skyblocker</h3>
+                    <p>Tickets: 2</p>
+                    <p>Status:  <span class="badge green">In Progress</span></p>
                 </div>
                 <div class="card flex-column">
                     <h3>Project B</h3>
                     <p>Tickets: 8</p>
-                    <p>Status:  <span class="badge green">Completed</span></p>
+                    <p>Status:  <span class="badge orange">On Hold</span></p>
                 </div>
                 <div class="card flex-column">
                     <h3>Project C</h3>
@@ -144,7 +146,7 @@
                         <td data-label="Priority"><span class="badge orange">Medium</span></td>
                         <td data-label="Assigned">
                             <div class="avatar-line">
-                                <img src="https://via.placeholder.com/25" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
+                                <img src="/src/assets/images/icon.png" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
                             </div>
                         </td>
                         <td data-label="Actions"><a href="/src/pages/tickets/ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
@@ -157,8 +159,8 @@
                         <td data-label="Priority"><span class="badge green">Low</span></td>
                         <td data-label="Assigned">
                             <div class="avatar-line">
-                                <img src="https://via.placeholder.com/25" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
-                                <img src="https://via.placeholder.com/25" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
+                                <img src="/src/assets/images/icon.png" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
+                                <img src="/src/assets/images/icon.png" title="Unassigned" alt="profile-picture" class="profile-pic-mini">
                             </div>
                         </td>
                         <td data-label="Actions"><a href="/src/pages/tickets/ticket-details.html" class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
