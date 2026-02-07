@@ -87,6 +87,7 @@
             <div class="form-item-stacked">
                 <label for="project-status">Status</label>
                 <select id="project-status" name="project-status">
+                    <option value="" selected hidden disabled>Select a status</option>
                     <option value="New">New</option>
                     <option value="In Progress">In Progress</option>
                     <option value="On Hold">On Hold</option>
@@ -111,9 +112,103 @@
                 <a href="/src/pages/projects/projects.html">
                     <button type="button" class="btn btn--outline">Cancel</button>
                 </a>
-                <button type="submit" class="btn">Create project</button>
+                <button id="actions" class="btn">Create project</button>
             </div>
         </form>
     </main>
 </body>
+<script type="module">
+    // Set as module to allow imports
+    import Toast from "/src/assets/js/toast.js";
+
+    // prevent multiple request when the infos are correct
+    let canPress = true;
+
+    // Get reference to form button
+    let testButton = document.getElementById("actions");
+
+    // Add click event on the previously got button
+    testButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (canPress){
+            verifyForm();
+        }
+        //console.log(formFiles.childElementCount);
+    });
+
+    function verifyForm(){
+        // Get references to form's field
+        let formTitle = document.getElementById("project-name");
+        let formClient = document.getElementById("client-name");
+
+        let formStart = document.getElementById("start-date");
+        let formEnd = document.getElementById("end-date");
+
+        let formStatus = document.getElementById("project-status");
+
+        let formFiles = document.getElementById("file-list");
+
+        // Get information for date validation
+        const selectedDateStart = new Date(formStart.value);
+        const selectedDateEnd = new Date(formEnd.value);
+        const today = new Date();
+
+        // Set time to 00:00:00 to compare only the calendar date
+        today.setHours(0, 0, 0, 0);
+
+
+        // check if empty / not set
+        if (formTitle.value.length <= 0) {
+            Toast("Please enter the project's name", "error");
+            return;
+        }
+        // Check if the project is still the default (empty value)
+        else if (formClient.value.length <= 0) {
+            Toast("Please enter client name", "error");
+            return;
+        }
+
+        // Starting Date Validation
+        if (formStart.value === "") {
+            Toast("Please select starting date", "error");
+            return;
+        }
+        else if (selectedDateStart < today) {
+            Toast("Invalid starting date", "error");
+            return;
+        }
+
+        if (formEnd.value === "") {
+            Toast("Please chose the estimated ending date", "error");
+            return;
+        }
+        else if (selectedDateEnd < today) {
+            Toast("Invalid ending date", "error");
+            return;
+        }
+
+        // check if selected date are in order
+        if (selectedDateStart > selectedDateEnd){
+            Toast("Ending date must be after starting date", "error");
+            return;
+        }
+
+        if (formStatus.value === "") {
+            Toast("Please chose the project's status", "error");
+            return;
+        }
+
+        if (formFiles.childElementCount < 1){
+            Toast("Please send the project contract", "error");
+            return;
+        }
+
+        // if everything checks out
+        Toast("Creating ticket ...", "success");
+        canPress = false;
+        setTimeout(() => {
+            location.href = "/src/pages/tickets/tickets.html";
+        }, 1500);
+    }
+</script>
 </html>

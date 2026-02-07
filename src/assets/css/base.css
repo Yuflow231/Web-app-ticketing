@@ -67,10 +67,10 @@ img {
     font-weight: bold;
     color: white;
 }
-.blue {background-color: #3498db;}
-.green{background-color: #27ae60;}
-.orange{background-color: #f39c12;}
-.red{background-color: #f31212;}
+.blue {background-color: #3498DB;}
+.green{background-color: #27AE60;}
+.orange{background-color: #F39C12;}
+.red{background-color: #F31212;}
 
 /* Progress bar */
 .progress-container {

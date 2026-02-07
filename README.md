@@ -5,7 +5,7 @@ This is a school project, prepare to see messy things
 This website has been set up by using Vite and Node.js, this is solely for hosting this website correctly.
 
 
-To run it locally you'll need to install nodeJS and run the following command at the root of the project folder.
+To run it locally you'll need to install Node.js and run the following command at the root of the project folder.
 
 `npm install` which needs Node.js
 

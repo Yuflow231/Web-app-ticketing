@@ -14,22 +14,80 @@
 
             <div class="form-item-stacked">
                 <label for="form-email">Email</label>
-                <input type="email" id="form-email" name="email" placeholder="Email" required>
+                <input type="email" id="form-email" name="email" placeholder="Email">
             </div>
 
             <div class="form-item-stacked">
                 <label for="form-password">Password</label>
-                <input type="password" id="form-password" name="password" placeholder="Password" required>
+                <input type="password" id="form-password" name="password" placeholder="Password">
             </div>
 
             <div class="password">
                 <a href="/src/pages/reset-password.html">Forgot password ?</a>
             </div>
 
+            <!--
             <div class="centered">
                 <a href="src/pages/dashBoard.html"><button type="button" class="btn">Login</button></a>
+            </div>-->
+
+            <div class="centered">
+                <button class="btn" id="actions">
+                    Login
+                </button>
             </div>
         </form>
     </div>
+
 </body>
+<script type="module">
+    // Set as module to allow imports
+    import Toast from "/src/assets/js/toast.js";
+
+    // prevent multiple request when the infos are correct
+    let canPress = true;
+
+    // Get reference to form button
+    let testButton = document.getElementById("actions");
+
+    // Add click event on the previously got button
+    testButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (canPress){
+            verifyForm();
+        }
+    });
+
+    function verifyForm(){
+
+        // regex to check mail validity
+        const regexMail = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+
+        // Get references to form's field
+        let formMail = document.getElementById("form-email");
+        let formPass = document.getElementById("form-password");
+
+        let emailFormError = !formMail.value.trim().match(regexMail)
+
+        if (formMail.value.length <= 0) {
+            Toast("Email is required", "error");
+            return;
+        }
+        else if (emailFormError) {
+            Toast("Please enter a valid email address", "error");
+            return;
+        }
+        else if (formPass.value.length <= 0) {
+            Toast("Please enter your password", "error");
+            return;
+        }
+
+        // if everything checks out
+        Toast("Connecting ...", "success");
+        canPress = false;
+        setTimeout(() => {
+            location.href = "/src/pages/dashBoard.html";
+        }, 1500);
+    }
+</script>
 </html>
