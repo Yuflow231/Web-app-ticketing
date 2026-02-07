@@ -121,3 +121,18 @@ textarea {
 .removeBtn:hover {
     color: var(--danger-hover);
 }
+
+.password-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.password-wrapper input {
+    padding-right: var(--spacing-xl);
+}
+.toggle-password{
+    position: absolute;
+    right: var(--spacing-sm);
+    cursor: pointer;
+    color: #666;
+}

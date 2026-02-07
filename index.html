@@ -19,7 +19,12 @@
 
             <div class="form-item-stacked">
                 <label for="form-password">Password</label>
-                <input type="password" id="form-password" name="password" placeholder="Password">
+                <div class="password-wrapper">
+                    <input type="password" id="form-password" name="password" placeholder="Password">
+                    <span id="toggle-password" class="toggle-password">
+                        <i id="pass-icon" class="fa-solid fa-eye"></i>
+                    </span>
+                </div>
             </div>
 
             <div class="password">
@@ -66,8 +71,8 @@
         const regexMail = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
 
         // Get references to form's field
-        let formMail = document.getElementById("form-email");
-        let formPass = document.getElementById("form-password");
+        const formMail = document.getElementById("form-email");
+        const formPass = document.getElementById("form-password");
 
         let emailFormError = !formMail.value.trim().match(regexMail);
 
@@ -98,5 +103,22 @@
             location.href = "/src/pages/dashBoard.html";
         }, 1500);
     }
+
+    const togglePassword = document.getElementById('toggle-password');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type attribute
+        const formPass = document.getElementById("form-password");
+
+        const type = formPass.getAttribute('type') === 'password' ? 'text' : 'password';
+        formPass.setAttribute('type', type);
+
+        // Toggle the icon
+        const icon = document.getElementById('pass-icon');
+
+        // switch between visual states
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+    });
 </script>
 </html>
