@@ -43,6 +43,8 @@
 <script type="module">
     // Set as module to allow imports
     import Toast from "/src/assets/js/toast.js";
+    import * as LangHandler from "/src/assets/js/language-handler.js";
+    console.log("The current language is", LangHandler.getLanguage());
 
     // prevent multiple request when the infos are correct
     let canPress = true;
