@@ -147,6 +147,7 @@
         let formStatus = document.getElementById("project-status");
 
         let formFiles = document.getElementById("file-list");
+        let formDrop = document.getElementById("drop-zone");
 
         // Get information for date validation
         const selectedDateStart = new Date(formStart.value);
@@ -156,49 +157,60 @@
         // Set time to 00:00:00 to compare only the calendar date
         today.setHours(0, 0, 0, 0);
 
+        // Clear previous highlights
+        [formTitle, formClient, formStart, formEnd, formStatus, formDrop].forEach(el => {el.classList.remove("error-field");});
 
         // check if empty / not set
         if (formTitle.value.length <= 0) {
+            formTitle.classList.add("error-field");
             Toast("Please enter the project's name", "error");
             return;
         }
         // Check if the project is still the default (empty value)
         else if (formClient.value.length <= 0) {
+            formClient.classList.add("error-field");
             Toast("Please enter client name", "error");
             return;
         }
 
         // Starting Date Validation
         if (formStart.value === "") {
+            formStart.classList.add("error-field");
             Toast("Please select starting date", "error");
             return;
         }
         else if (selectedDateStart < today) {
+            formStart.classList.add("error-field");
             Toast("Invalid starting date", "error");
             return;
         }
 
         if (formEnd.value === "") {
+            formEnd.classList.add("error-field");
             Toast("Please chose the estimated ending date", "error");
             return;
         }
         else if (selectedDateEnd < today) {
+            formEnd.classList.add("error-field");
             Toast("Invalid ending date", "error");
             return;
         }
 
         // check if selected date are in order
         if (selectedDateStart > selectedDateEnd){
+            formEnd.classList.add("error-field");
             Toast("Ending date must be after starting date", "error");
             return;
         }
 
         if (formStatus.value === "") {
+            formStatus.classList.add("error-field");
             Toast("Please chose the project's status", "error");
             return;
         }
 
         if (formFiles.childElementCount < 1){
+            formDrop.classList.add("error-field");
             Toast("Please send the project contract", "error");
             return;
         }

@@ -67,17 +67,24 @@
         let formMail = document.getElementById("form-email");
         let formPass = document.getElementById("form-password");
 
-        let emailFormError = !formMail.value.trim().match(regexMail)
+        let emailFormError = !formMail.value.trim().match(regexMail);
+
+        // Clear previous highlights
+        [formMail, formPass].forEach(el => {el.classList.remove("error-field");});
+
 
         if (formMail.value.length <= 0) {
+            formMail.classList.add("error-field");
             Toast("Email is required", "error");
             return;
         }
         else if (emailFormError) {
+            formMail.classList.add("error-field");
             Toast("Please enter a valid email address", "error");
             return;
         }
         else if (formPass.value.length <= 0) {
+            formPass.classList.add("error-field");
             Toast("Please enter your password", "error");
             return;
         }

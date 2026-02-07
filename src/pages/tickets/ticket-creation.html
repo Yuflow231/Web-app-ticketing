@@ -141,22 +141,29 @@
         let formDate = document.getElementById("due-date");
         let formPriority = document.getElementById("ticket-priority");
 
+        // Clear previous highlights
+        [formTitle, formProject, formDate, formPriority].forEach(el => {el.classList.remove("error-field");});
+
         // check if empty / not set
         if (formTitle.value.length <= 0) {
+            formTitle.classList.add("error-field");
             Toast("Please enter a title", "error");
             return;
         }
         // Check if the project is still the default (empty value)
         else if (formProject.value === "") {
+            formProject.classList.add("error-field");
             Toast("Please chose the associated project", "error");
             return;
         }
         else if (formDate.value === "") {
+            formDate.classList.add("error-field");
             Toast("Please select a due date", "error");
             return;
         }
         // Same for priority
         else if (formPriority.value === "") {
+            formPriority.classList.add("error-field");
             Toast("Please chose the priority level", "error");
             return;
         }
@@ -169,6 +176,7 @@
         today.setHours(0, 0, 0, 0);
 
         if (selectedDate < today) {
+            formDate.classList.add("error-field");
             Toast("Invalid due date", "error");
             return;
         }
