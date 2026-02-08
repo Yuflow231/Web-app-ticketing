@@ -6,7 +6,7 @@
     <title>Project creation - Ticketing App</title>
     <link rel="stylesheet" href="/src/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
-    <script type="module" src="/src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/side-bar.js" defer></script>
     <script type="module" src="/src/assets/js/drag-n-drop.js"></script>
 </head>
 <body>
@@ -87,10 +87,10 @@
             <div class="form-item-stacked">
                 <label for="project-status">Status</label>
                 <select id="project-status" name="project-status">
+                    <option value="" selected hidden disabled>Select a status</option>
                     <option value="New">New</option>
                     <option value="In Progress">In Progress</option>
                     <option value="On Hold">On Hold</option>
-                    <option value="Completed">Completed</option>
                 </select>
             </div>
 
@@ -112,9 +112,64 @@
                 <a href="/src/pages/projects/projects.html">
                     <button type="button" class="btn btn--outline">Cancel</button>
                 </a>
-                <button type="submit" class="btn">Create project</button>
+                <button id="actions" class="btn">Create project</button>
             </div>
         </form>
     </main>
 </body>
+<script type="module">
+    // Set as module to allow imports
+    import * as FormVerifier from "/src/assets/js/form-verifs.js";
+
+    // Get references to form's field
+    let formTitle = document.getElementById("project-name");
+    let formClient = document.getElementById("client-name");
+
+    let formStart = document.getElementById("start-date");
+    let formEnd = document.getElementById("end-date");
+
+    let formStatus = document.getElementById("project-status");
+
+    let formFiles = document.getElementById("file-list");
+    let formDrop = document.getElementById("drop-zone");
+
+    // prevent multiple request when the infos are correct
+    let canPress = true;
+
+    // Get reference to form button
+    let fromButton = document.getElementById("actions");
+
+    // Add click event on the previously got button
+    fromButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (canPress){
+            verifyForm();
+        }
+        //console.log(formFiles.childElementCount);
+    });
+
+    function verifyForm(){
+        let formValidation = true;
+        // Clear previous highlights
+        FormVerifier.resetFormState([formTitle, formClient, formStart, formEnd, formStatus, formDrop]);
+
+        // check each field with its corresponding checks
+        formValidation &= FormVerifier.checkField(formTitle, formTitle, [FormVerifier.verifyEmptyness("Please enter a project's name")]);
+        formValidation &= FormVerifier.checkField(formClient, formClient, [FormVerifier.verifyEmptyness("Please enter the client name")]);
+
+        formValidation &= FormVerifier.checkField(formStart, formStart, [FormVerifier.verifyEmptyness("Please select a starting date"), FormVerifier.verifyDate("Starting date cannot be in the past")]);
+        formValidation &= FormVerifier.checkField(formEnd, formEnd, [FormVerifier.verifyEmptyness("Please select a ending date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
+        formValidation &= FormVerifier.checkField([formStart,formEnd], formEnd, [FormVerifier.verifyDateDiff("The ending date must be after the starting date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
+
+
+        formValidation &= FormVerifier.checkField(formStatus, formStatus, [FormVerifier.verifyEmptyness("Please select the project's status")]);
+        formValidation &= FormVerifier.checkField(formFiles, formDrop, [FormVerifier.verifyFile("Please send the project contract")]);
+
+        // if everything checks out
+        if(formValidation){
+            canPress = false;
+            FormVerifier.validateForm("Creating project ...", "/src/pages/projects/projects.html");
+        }
+    }
+</script>
 </html>

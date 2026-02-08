@@ -6,7 +6,7 @@
     <title>Profile - Ticketing App</title>
     <link rel="stylesheet" href="/src/assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" defer></script>
-    <script type="module" src="/src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/side-bar.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -98,13 +98,9 @@
                     <div class="form-item" style="width: 10rem;">
                         <label for="language-select">Language</label>
                         <select id="language-select">
-                            <option>English (US)</option>
-                            <option>French</option>
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
                         </select>
-                    </div>
-                    <div class="form-item">
-                        <label>Timezone</label>
-                        <p>GMT-5 (Eastern Standard Time)</p>
                     </div>
                 </section>
 
@@ -120,4 +116,19 @@
         </div>
     </main>
 </body>
+<script type="module">
+    import * as LangHandler from "/src/assets/js/language-handler.js";
+    console.log("The current language is", LangHandler.getLanguage());
+
+    const languageSelect = document.getElementById("language-select");
+
+    window.addEventListener("DOMContentLoaded", () => {
+        languageSelect.value = LangHandler.getLanguage();
+    });
+
+    languageSelect.addEventListener("change", function() {
+        LangHandler.setLanguage(this.value);
+        console.log("The current language is", LangHandler.getLanguage());
+    });
+</script>
 </html>

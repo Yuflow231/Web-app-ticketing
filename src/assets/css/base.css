@@ -32,7 +32,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: bold;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
 }
@@ -67,10 +67,10 @@ img {
     font-weight: bold;
     color: white;
 }
-.blue {background-color: #3498db;}
-.green{background-color: #27ae60;}
-.orange{background-color: #f39c12;}
-.red{background-color: #f31212;}
+.blue {background-color: #3498DB;}
+.green{background-color: #27AE60;}
+.orange{background-color: #F39C12;}
+.red{background-color: #F31212;}
 
 /* Progress bar */
 .progress-container {
@@ -115,18 +115,6 @@ img {
 .centered {
     margin: auto;
     text-align: center;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 /* Responsive */

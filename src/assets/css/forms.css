@@ -53,6 +53,12 @@ textarea {
     min-height: 120px;
 }
 
+.error-field{
+    border-color: var(--danger-color) !important;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+    outline: none;
+}
+
 .password {
     color: var(--primary-color);
     font-size: var(--font-size-sm);
@@ -71,14 +77,18 @@ textarea {
     padding: var(--spacing-xl);
     text-align: center;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: var(--transition-normal);
     background: #fafafa;
 }
 
-#drop-zone:hover,
+#drop-zone:hover {
+    background-color: #E8E8E8;
+    border-color: var(--text-secondary);
+}
+
 #drop-zone.dragover {
+    background-color: #E0F0FF;
     border-color: var(--primary-color);
-    background: rgba(14, 148, 212, 0.05);
 }
 
 #drop-zone p {
@@ -110,4 +120,19 @@ textarea {
 
 .removeBtn:hover {
     color: var(--danger-hover);
+}
+
+.password-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.password-wrapper input {
+    padding-right: var(--spacing-xl);
+}
+.toggle-password{
+    position: absolute;
+    right: var(--spacing-sm);
+    cursor: pointer;
+    color: #666;
 }

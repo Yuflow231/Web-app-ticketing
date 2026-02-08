@@ -1,8 +1,6 @@
 .idea
 
 node_modules
-vite.config.js
 package-lock.json
-package.json
 
 ouiouibaguette.bat
