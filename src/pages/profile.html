@@ -122,6 +122,10 @@
 
     const languageSelect = document.getElementById("language-select");
 
+    window.addEventListener("DOMContentLoaded", () => {
+        languageSelect.value = LangHandler.getLanguage();
+    });
+
     languageSelect.addEventListener("change", function() {
         LangHandler.setLanguage(this.value);
         console.log("The current language is", LangHandler.getLanguage());

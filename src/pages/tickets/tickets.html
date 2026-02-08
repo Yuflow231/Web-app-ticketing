@@ -173,6 +173,9 @@
 </body>
 <script type="module">
     import * as LangHandler from "/src/assets/js/language-handler.js";
+    import { TableManager } from "/src/assets/js/table-handler.js";
+    // Initialize for tickets table
+    new TableManager('.tickets table', 5);
     console.log("The current language is", LangHandler.getLanguage());
 </script>
 </html>
