@@ -119,16 +119,28 @@
 </body>
 <script type="module">
     // Set as module to allow imports
-    import Toast from "/src/assets/js/toast.js";
+    import * as FormVerifier from "/src/assets/js/form-verifs.js";
+
+    // Get references to form's field
+    let formTitle = document.getElementById("project-name");
+    let formClient = document.getElementById("client-name");
+
+    let formStart = document.getElementById("start-date");
+    let formEnd = document.getElementById("end-date");
+
+    let formStatus = document.getElementById("project-status");
+
+    let formFiles = document.getElementById("file-list");
+    let formDrop = document.getElementById("drop-zone");
 
     // prevent multiple request when the infos are correct
     let canPress = true;
 
     // Get reference to form button
-    let testButton = document.getElementById("actions");
+    let fromButton = document.getElementById("actions");
 
     // Add click event on the previously got button
-    testButton.addEventListener("click", (e) => {
+    fromButton.addEventListener("click", (e) => {
         e.preventDefault();
         if (canPress){
             verifyForm();
@@ -137,90 +149,27 @@
     });
 
     function verifyForm(){
-        // Get references to form's field
-        let formTitle = document.getElementById("project-name");
-        let formClient = document.getElementById("client-name");
-
-        let formStart = document.getElementById("start-date");
-        let formEnd = document.getElementById("end-date");
-
-        let formStatus = document.getElementById("project-status");
-
-        let formFiles = document.getElementById("file-list");
-        let formDrop = document.getElementById("drop-zone");
-
-        // Get information for date validation
-        const selectedDateStart = new Date(formStart.value);
-        const selectedDateEnd = new Date(formEnd.value);
-        const today = new Date();
-
-        // Set time to 00:00:00 to compare only the calendar date
-        today.setHours(0, 0, 0, 0);
-
+        let formValidation = true;
         // Clear previous highlights
-        [formTitle, formClient, formStart, formEnd, formStatus, formDrop].forEach(el => {el.classList.remove("error-field");});
+        FormVerifier.resetFormState([formTitle, formClient, formStart, formEnd, formStatus, formDrop]);
 
-        // check if empty / not set
-        if (formTitle.value.length <= 0) {
-            formTitle.classList.add("error-field");
-            Toast("Please enter the project's name", "error");
-            return;
-        }
-        // Check if the project is still the default (empty value)
-        else if (formClient.value.length <= 0) {
-            formClient.classList.add("error-field");
-            Toast("Please enter client name", "error");
-            return;
-        }
+        // check each field with its corresponding checks
+        formValidation &= FormVerifier.checkField(formTitle, formTitle, [FormVerifier.verifyEmptyness("Please enter a project's name")]);
+        formValidation &= FormVerifier.checkField(formClient, formClient, [FormVerifier.verifyEmptyness("Please enter the client name")]);
 
-        // Starting Date Validation
-        if (formStart.value === "") {
-            formStart.classList.add("error-field");
-            Toast("Please select starting date", "error");
-            return;
-        }
-        else if (selectedDateStart < today) {
-            formStart.classList.add("error-field");
-            Toast("Invalid starting date", "error");
-            return;
-        }
+        formValidation &= FormVerifier.checkField(formStart, formStart, [FormVerifier.verifyEmptyness("Please select a starting date"), FormVerifier.verifyDate("Starting date cannot be in the past")]);
+        formValidation &= FormVerifier.checkField(formEnd, formEnd, [FormVerifier.verifyEmptyness("Please select a ending date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
+        formValidation &= FormVerifier.checkField([formStart,formEnd], formEnd, [FormVerifier.verifyDateDiff("The ending date must be after the starting date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
 
-        if (formEnd.value === "") {
-            formEnd.classList.add("error-field");
-            Toast("Please chose the estimated ending date", "error");
-            return;
-        }
-        else if (selectedDateEnd < today) {
-            formEnd.classList.add("error-field");
-            Toast("Invalid ending date", "error");
-            return;
-        }
 
-        // check if selected date are in order
-        if (selectedDateStart > selectedDateEnd){
-            formEnd.classList.add("error-field");
-            Toast("Ending date must be after starting date", "error");
-            return;
-        }
-
-        if (formStatus.value === "") {
-            formStatus.classList.add("error-field");
-            Toast("Please chose the project's status", "error");
-            return;
-        }
-
-        if (formFiles.childElementCount < 1){
-            formDrop.classList.add("error-field");
-            Toast("Please send the project contract", "error");
-            return;
-        }
+        formValidation &= FormVerifier.checkField(formStatus, formStatus, [FormVerifier.verifyEmptyness("Please select the project's status")]);
+        formValidation &= FormVerifier.checkField(formFiles, formDrop, [FormVerifier.verifyFile("Please send the project contract")]);
 
         // if everything checks out
-        Toast("Creating ticket ...", "success");
-        canPress = false;
-        setTimeout(() => {
-            location.href = "/src/pages/tickets/tickets.html";
-        }, 1500);
+        if(formValidation){
+            canPress = false;
+            FormVerifier.validateForm("Creating project ...", "/src/pages/projects/projects.html");
+        }
     }
 </script>
 </html>

@@ -37,7 +37,7 @@
             </div>-->
 
             <div class="centered">
-                <button class="btn" id="actions">
+                <button class="btn" id="actions" type="submit">
                     Login
                 </button>
             </div>
@@ -47,18 +47,23 @@
 </body>
 <script type="module">
     // Set as module to allow imports
-    import Toast from "/src/assets/js/toast.js";
+    import * as FormVerifier from "/src/assets/js/form-verifs.js";
     import * as LangHandler from "/src/assets/js/language-handler.js";
     console.log("The current language is", LangHandler.getLanguage());
+
+
+    // get reference to form's fields
+    const formMail = document.getElementById("form-email");
+    const formPass = document.getElementById("form-password");
 
     // prevent multiple request when the infos are correct
     let canPress = true;
 
     // Get reference to form button
-    let testButton = document.getElementById("actions");
+    let formButton = document.getElementById("actions");
 
     // Add click event on the previously got button
-    testButton.addEventListener("click", (e) => {
+    formButton.addEventListener("click", (e) => {
         e.preventDefault();
         if (canPress){
             verifyForm();
@@ -66,50 +71,25 @@
     });
 
     function verifyForm(){
-
-        // regex to check mail validity
-        const regexMail = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
-
-        // Get references to form's field
-        const formMail = document.getElementById("form-email");
-        const formPass = document.getElementById("form-password");
-
-        let emailFormError = !formMail.value.trim().match(regexMail);
-
+        let formValidation = true;
         // Clear previous highlights
-        [formMail, formPass].forEach(el => {el.classList.remove("error-field");});
+        FormVerifier.resetFormState([formMail, formPass]);
 
-
-        if (formMail.value.length <= 0) {
-            formMail.classList.add("error-field");
-            Toast("Email is required", "error");
-            return;
-        }
-        else if (emailFormError) {
-            formMail.classList.add("error-field");
-            Toast("Please enter a valid email address", "error");
-            return;
-        }
-        else if (formPass.value.length <= 0) {
-            formPass.classList.add("error-field");
-            Toast("Please enter your password", "error");
-            return;
-        }
+        // check each field with its corresponding checks
+        formValidation &= FormVerifier.checkField(formMail, formMail, [FormVerifier.verifyEmptyness("Please enter your mail"), FormVerifier.verifyMail("Email is invalid") ]);
+        formValidation &= FormVerifier.checkField(formPass, formPass, [FormVerifier.verifyEmptyness("Please enter your password")]);
 
         // if everything checks out
-        Toast("Connecting ...", "success");
-        canPress = false;
-        setTimeout(() => {
-            location.href = "/src/pages/dashBoard.html";
-        }, 1500);
+        if(formValidation){
+            canPress = false;
+            FormVerifier.validateForm("Connecting ...", "/src/pages/dashBoard.html");
+        }
     }
 
     const togglePassword = document.getElementById('toggle-password');
 
     togglePassword.addEventListener('click', function () {
-        // Toggle the type attribute
-        const formPass = document.getElementById("form-password");
-
+        // Toggle the type of the field
         const type = formPass.getAttribute('type') === 'password' ? 'text' : 'password';
         formPass.setAttribute('type', type);
 
