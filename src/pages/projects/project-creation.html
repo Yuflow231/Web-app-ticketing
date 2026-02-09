@@ -109,9 +109,7 @@
             </div>
 
             <div class="centered" style="display: flex; gap: var(--spacing-md); justify-content: center;">
-                <a href="/src/pages/projects/projects.html">
-                    <button type="button" class="btn btn--outline">Cancel</button>
-                </a>
+                <button onclick="location.href = '/src/pages/projects/projects.html'" type="button" class="btn btn--outline">Cancel</button>
                 <button id="actions" class="btn">Create project</button>
             </div>
         </form>
@@ -159,7 +157,7 @@
 
         formValidation &= FormVerifier.checkField(formStart, formStart, [FormVerifier.verifyEmptyness("Please select a starting date"), FormVerifier.verifyDate("Starting date cannot be in the past")]);
         formValidation &= FormVerifier.checkField(formEnd, formEnd, [FormVerifier.verifyEmptyness("Please select a ending date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
-        formValidation &= FormVerifier.checkField([formStart,formEnd], formEnd, [FormVerifier.verifyDateDiff("The ending date must be after the starting date"), FormVerifier.verifyDate("Ending date cannot be in the past")]);
+        formValidation &= FormVerifier.checkField([formStart,formEnd], formEnd, [FormVerifier.verifyDateDiff("The ending date must be after the starting date")]);
 
 
         formValidation &= FormVerifier.checkField(formStatus, formStatus, [FormVerifier.verifyEmptyness("Please select the project's status")]);
